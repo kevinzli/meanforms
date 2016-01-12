@@ -1,0 +1,50 @@
+    <script type="text/ng-template" id="ModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Form</h3>
+        </div>
+        <div class="modal-body">
+            {{message}}
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+        </div>
+    </script>
+
+    <div class="container col-xs-10 col-xs-offset-1">
+    <h1>{{vm.formName}} {{vm.formId}}</h1>
+    <form name="vm.form">
+        <wizard on-finish="vm.finishWizard()" > 
+          <wz-step ng-repeat="step in vm.fields" title="{{step.title}}">
+            <h2>{{step.header}}</h2>
+            <formly-form model="vm.model" fields="step.fields" form="step.form" options="vm.options">
+              <div style="text-align:right">
+                <button type="submit" ng-disabled="step.form.$invalid" wz-next class="btn btn-primary submit-button">{{step.buttonText}}</button>
+              </div>
+            </formly-form>
+          </wz-step>
+        </wizard>
+      </form>
+
+     <!-- <hr />
+       <label ng-hide="vm.isCreateNew">View Mode:
+        <input type="checkbox" ng-model="vm.options.formState.disabled">
+      </label><br/> -->
+
+      <!-- <h2>Model</h2>
+      <pre>{{vm.model | json}}</pre>
+      <h2>Fields</h2>
+      <pre>{{vm.originalFields | json}}</pre> -->
+      <!-- <h2>Form</h2>
+      <pre>{{vm.form | json}}</pre> -->
+
+    </div>  
+
+<!--     <div>
+      <script type="text/ng-template" id="input-template.html">
+        <div>
+          <input ng-if="!(formState.readOnly||to.readOnly)" class="form-control" ng-model="model[options.key]">
+          <p ng-if="formState.readOnly||to.readOnly" class="form-control-static">{{model[options.key]}}</p>
+        </div>
+      </script>
+    </div> -->
+    <br /><br /><br />
