@@ -25,7 +25,7 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
         }
 
         //get the dynamic form from javascript objects
-        Forms.getFormTemplate(vm.formId).then(function (response){
+        Forms.getFormSchema(vm.formId).then(function (response){
             var dynamicForm= response.data;
             // The model object that we reference
             // on the  element in index.html

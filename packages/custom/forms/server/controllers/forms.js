@@ -19,7 +19,7 @@ module.exports = function(Forms) {
             var form = new Form(req.body);
 
             //get the form fields template
-            var formTemplate= formSchemas.getFormTemplate(form.formId);
+            var formTemplate= formSchemas.getFormSchema(form.formId);
 
             console.log("formtemplate first step: "+formTemplate.fields[0].name);
 
@@ -47,7 +47,7 @@ module.exports = function(Forms) {
          * Get a form schema by id
          */
         getFormSchema:function(id){
-            return formSchemas.getFormTemplate(id);
+            return formSchemas.getFormSchema(id);
         }   
     };
 }

@@ -5,7 +5,7 @@ function formsService($http) {
    		return $http.get('/api/formschemas');
    	}
 
-   	function getFormTemplate(id){
+   	function getFormSchema(id){
    	    return $http.get('/api/formschemas/'+id);
    	}
 
@@ -19,7 +19,7 @@ function formsService($http) {
     return {
       name: 'forms',
       getForms: getForms,
-      getFormTemplate: getFormTemplate,
+      getFormSchema: getFormSchema,
       createForm: createForm
     };
   }
