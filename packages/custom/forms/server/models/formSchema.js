@@ -1,7 +1,5 @@
 'use strict';
 
-var gasInstallationForm0501 = require('./gas-installation-form-0501.js');
-
 var forms= [
     {
     	id:"0501",
@@ -26,6 +24,7 @@ function getFormSchema(id){
 
     switch(id){
         case '0501':
+            var gasInstallationForm0501 = require('./gas-installation-form-0501.js');
             formSchema=gasInstallationForm0501.formSchema;
             break;
         case '0410':
