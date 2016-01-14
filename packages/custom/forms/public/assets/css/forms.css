@@ -10,3 +10,11 @@
 
 .nav, .pagination, .carousel, .panel-title a {
   cursor: pointer; }*/
+
+.navbar-fixed-top {
+	background-color: #0067b0;
+	border-bottom: 1px solid #004f87;
+}
+.content {
+	margin-top: 90px;
+}

@@ -3,8 +3,10 @@
 {% include '../includes/head.html' %}
 
 <body data-ng-controller="ThemeController" ng-cloak class="ng-cloak" ng-class="state">
-    <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation" 
-    data-ng-hide="state.slice(0, 'forms'.length) == 'forms'"></div>
+    <div class="navbar navbar-inverse navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation"
+    ></div>
+    <!-- data-ng-hide="state.slice(0, 'forms'.length) == 'forms'" -->
+    
     <div data-ng-include="'/admin/views/index.html'"></div>
     <section class="content">
         <section class="container">

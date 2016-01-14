@@ -34,7 +34,7 @@ Forms.register(function(app, auth, database) {
 
   Forms.aggregateAsset('css', 'forms.css');
   Forms.aggregateAsset('css', '../lib/angular-wizard/dist/angular-wizard.css');
-  
+  Forms.aggregateAsset('css', 'theme_styles.css');
   
 
   /**
