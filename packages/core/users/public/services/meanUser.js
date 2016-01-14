@@ -77,7 +77,7 @@ angular.module('mean.users').factory('MeanUser', [ '$rootScope', '$http', '$loca
       }
       destination = angular.isDefined(response.redirect) ? response.redirect : destination;
       $cookies.remove('redirect');
-      this.user = user || response;
+      this.user = user || response.user;
       this.loggedin = true;
       this.loginError = 0;
       this.registerError = 0;
