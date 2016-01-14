@@ -51,13 +51,17 @@ module.exports = {
       enabled: false
     }
   },
-  emailFrom: 'SENDER EMAIL ADDRESS', // sender address like ABC <abc@example.com>
+  emailFrom: 'kevin.li@safetyauthority.ca', // sender address like ABC <abc@example.com>
+  // mailer: {
+  //   service: 'Hotmail', // Gmail, SMTP
+  //   auth: {
+  //     user: 'testnd_kl_001@hotmail.com',
+  //     pass: 'asd123'
+  //   },
+  //   secure: true
+  // }, 
   mailer: {
-    service: 'SERVICE_PROVIDER', // Gmail, SMTP
-    auth: {
-      user: 'EMAIL_ID',
-      pass: 'PASSWORD'
-    }
-  }, 
+    host: 'sesmail.ses.gov.bc.ca',
+  },
   secret: 'SOME_TOKEN_SECRET'
 };
