@@ -5,13 +5,14 @@ function formsService($http) {
    		return $http.get('/api/formschemas');
    	}
 
-   	function getFormSchema(id){
-   	    return $http.get('/api/formschemas/'+id);
+   	function getFormSchema(id, version){
+   	    return $http.get('/api/formschemas/'+id+'/'+version);
    	}
 
-   	function createForm(formId, formModel){
+   	function createForm(formId, version, formModel){
    		return $http.post('/api/forms/new', {
    			formId: formId,
+        formVersion: version,
    			formModel: formModel
    		});
    	}

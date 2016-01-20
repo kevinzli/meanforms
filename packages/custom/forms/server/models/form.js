@@ -20,6 +20,10 @@ var FormSchema = new Schema({
     required: true,
     //trim: true
   },
+  formVersion: {
+    type: String,
+    required: true,
+  },
   formModel: Schema.Types.Mixed
 });
 
@@ -29,6 +33,10 @@ var FormSchema = new Schema({
 FormSchema.path('formId').validate(function(formId) {
   return !!formId;
 }, 'formId cannot be blank');
+
+FormSchema.path('formVersion').validate(function(formVersion) {
+  return !!formVersion;
+}, 'formVersion cannot be blank');
 
 FormSchema.path('formModel').validate(function(formModel) {
   return !!formModel;

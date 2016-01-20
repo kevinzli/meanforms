@@ -10,9 +10,31 @@
         </div>
     </script>
 
+    <script type="text/ng-template" id="panel.html">
+        <div class="panel panel-primary">
+
+          <div class="panel-heading px-nested-panel-heading clearfix">
+            <strong class="control-label" ng-if="options.templateOptions.label">
+              {{options.templateOptions.label}}
+            </strong>
+          </div>
+
+          <div class="panel-body px-nested-panel-body">
+            <formly-transclude></formly-transclude>
+          </div>
+
+        </div>
+    </script>
+
     <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <div><p>505 Sixth Street, Suite 200, New Westminster, BC V3L 0E1 <br /><strong>Toll free: 1-866-566-7233 &nbsp;&nbsp; Email: contact@safetyauthority.ca&nbsp;&nbsp; Website: www.safetyauthority.ca</strong></p><p style="color:red;">Payment Card Industry Data Security Standards prevent the use of credit card information sent through email or fax. A Client Service Representative will contact you within three business days to complete any payment process required. 
+        </p></div><br /><br />
         <div class="container">
         <h1>{{vm.formName}} {{vm.formId}}</h1>
+        <div><p>
+           <strong>Note:</strong> The information on this form is collected to administer the provisions of the BC Safety Standards Act and section 26 of the Freedom of Information and Protection of Privacy Act. If you have questions about the collection, use, or disclosure of this information, contacts the Records, Information&#38;Privacy Analyst at 1-866-566-7233.
+        </p>
+        </div>
         <form name="vm.form">
             <wizard on-finish="vm.finishWizard()" > 
               <wz-step ng-repeat="step in vm.fields" title="{{step.title}}">
@@ -37,7 +59,8 @@
           <pre>{{vm.originalFields | json}}</pre> -->
           <!-- <h2>Form</h2>
           <pre>{{vm.form | json}}</pre> -->
-
+          <div id="footer">
+          </div>
         </div>
 
     </div>  

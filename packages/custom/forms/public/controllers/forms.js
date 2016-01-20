@@ -15,6 +15,7 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
 
         //parameters
         vm.formId= $stateParams.formId;
+        vm.formVersion = $stateParams.version;
 
         var form= _.find($scope.forms, {
             'id': vm.formId
@@ -25,7 +26,7 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
         }
 
         //get the dynamic form from javascript objects
-        Forms.getFormSchema(vm.formId).then(function (response){
+        Forms.getFormSchema(vm.formId, vm.formVersion).then(function (response){
             var dynamicForm= response.data;
             // The model object that we reference
             // on the  element in index.html
@@ -53,7 +54,7 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
 
 	// function definition
     function finishWizard() {
-    	Forms.createForm(vm.formId, vm.model).then(function(response){
+    	Forms.createForm(vm.formId, vm.formVersion, vm.model).then(function(response){
     		console.log("From client: the form created successfully");
     		$scope.openModal("The form has been created successfully.");
     	}, function(response){
@@ -95,3 +96,12 @@ angular.module('mean.forms').controller('ModalInstanceCtrl', function ($scope, $
         $uibModalInstance.dismiss('cancel');
     };
 });
+
+angular.module('mean.forms').config(function (formlyConfigProvider) {
+    
+    formlyConfigProvider.setWrapper({
+      name: 'panel',
+      templateUrl: 'panel.html'
+    });
+    
+  });

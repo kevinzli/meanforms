@@ -161,7 +161,7 @@ var formSchema={
                         valueProp: 'id',
                         labelProp: 'title'
                     }
-                }
+                },
             ]
         },
         {

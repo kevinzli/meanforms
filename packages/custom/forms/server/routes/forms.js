@@ -8,13 +8,13 @@ module.exports = function(Forms, app, auth, database) {
 
   app.get('/api/formschemas', forms.getSchemas);
 
-  app.param('formId', function(req, res, next, formId){
-      req.formSchema= forms.getFormSchema(formId);
-      next();
-  });
+  // app.param('formId', function(req, res, next, formId){
+  //     req.formSchema= forms.getFormSchema(formId);
+  //     next();
+  // });
 
-  app.get('/api/formschemas/:formId', function(req, res, next){
-    res.json(req.formSchema);
+  app.get('/api/formschemas/:formId/:version', function(req, res, next){
+    res.json(forms.getFormSchema(req.params.formId, req.params.version));
   });
 
   app.post('/api/forms/new', forms.create);
