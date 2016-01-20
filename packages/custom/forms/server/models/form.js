@@ -24,7 +24,17 @@ var FormSchema = new Schema({
     type: String,
     required: true,
   },
-  formModel: Schema.Types.Mixed
+  formModel: Schema.Types.Mixed,
+  status: { //new, processed
+    type: String,
+    required: true,
+  },
+  dateProcessed: {
+    type: Date,
+  },
+  processedBy: {
+    type: String,
+  }
 });
 
 /**

@@ -12,7 +12,7 @@ var formSchema = {
 		buttonText: 'Continue',
 		fields: [{
 			key: 'permitWorkClass',
-			type: 'multiCheckbox',
+			type: 'bcsa_multiCheckbox',
 			templateOptions: {
 				label: 'please choose only one option',
 				options: [{
@@ -60,7 +60,7 @@ var formSchema = {
 			}
 		}, {
 			key: 'licenseType',
-			type: 'multiCheckbox',
+			type: 'bcsa_multiCheckbox',
 			templateOptions: {
 				label: 'License type',
 				options: [{
@@ -90,7 +90,7 @@ var formSchema = {
 			}
 		}, {
 			key: 'preferredMethodofContact',
-			type: 'multiCheckbox',
+			type: 'bcsa_multiCheckbox',
 			templateOptions: {
 				label: 'Preferred method of contact',
 				options: [{
@@ -261,7 +261,7 @@ var formSchema = {
 			}
 		}, {
 			key: 'pipingDesignRegistrationRequired',
-			type: 'multiCheckbox',
+			type: 'bcsa_multiCheckbox',
 			templateOptions: {
 				label: 'Piping Design Registration Required?',
 				options: [{
@@ -319,42 +319,42 @@ var formSchema = {
 			}
 		}, {
 			key: 'newEquipment',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'New Equipment',
 				//required: true
 			}
 		}, {
 			key: 'replacementEquipment',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'Replacement Equipment',
 				//required: true
 			}
 		}, {
 			key: 'commercial',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'Commercial',
 				//required: true
 			}
 		}, {
 			key: 'industrial',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'Industrial',
 				//required: true
 			}
 		}, {
 			key: 'institutional',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'Institutional',
 				//required: true
 			}
 		}, {
 			key: 'residential',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'Residential (> than 4 units)',
 				//required: true
@@ -423,7 +423,7 @@ var formSchema = {
 				}, {
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_1_capacity_unit',
-					type: 'multiCheckbox',
+					type: 'bcsa_multiCheckbox',
 					templateOptions: {
 						label: '',
 						options: [{
@@ -447,7 +447,7 @@ var formSchema = {
 				},{
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_1_heatingSurface_unit',
-					type: 'multiCheckbox',
+					type: 'bcsa_multiCheckbox',
 					templateOptions: {
 						label: '',
 						options: [{
@@ -472,35 +472,35 @@ var formSchema = {
 		buttonText: 'Submit',
 		fields: [{
 			key: 'declaration_1',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'I hereby declare all information provided is accurate; incorrect information may result in the retraction of the associated permit',
 				//required: true
 			}
 		}, {
 			key: 'declaration_2',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'The contractor agrees to pay on demand any shortages or extra charges for inspection of equipment not shown herein in accordance with the BC Safety Authority Boiler &#38; Pressure Vessel fee schedule (http://www.safetyauthority.ca/boiler-pressure-vessels-fee-schedule)',
 				//required: true
 			}
 		}, {
 			key: 'declaration_3',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'The contractor agrees to follow terms & conditions attached to this installation permit (refer to back page).',
 				//required: true
 			}
 		}, {
 			key: 'declaration_4',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'The contractor agrees, after completion of work, to submit to BCSA form FRM-1149-00 (2013-04-15) "Boiler, Pressure Vessel and Refrigeration Inspection Declaration"',
 				//required: true
 			}
 		}, {
 			key: 'declaration_5',
-			type: 'checkbox',
+			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'Checking this box and submitting this form to BC Safety Authority via email constitutes your authorization. This has the same effect as submitting a handwritten signature.',
 				//required: true
