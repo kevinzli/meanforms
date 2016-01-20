@@ -33,9 +33,7 @@ Forms.register(function(app, auth, database) {
   Forms.angularDependencies(['formly', 'formlyBootstrap', 'mgo-angular-wizard']);
 
   Forms.aggregateAsset('css', 'forms.css');
-  Forms.aggregateAsset('css', '../lib/angular-wizard/dist/angular-wizard.css');
-  Forms.aggregateAsset('css', 'theme_styles.css');
-  
+  Forms.aggregateAsset('css', '../lib/angular-wizard/dist/angular-wizard.css');  
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
