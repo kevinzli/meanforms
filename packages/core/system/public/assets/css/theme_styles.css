@@ -2430,14 +2430,15 @@ input[type="radio"] {
   position: relative;
   padding-left: 15px; }
   .checkbox-nice input[type=checkbox] {
-    visibility: hidden; }
+    display: none; }
   .checkbox-nice label {
     padding-top: 3px;
     font-weight: 400;
     text-transform: initial;
     font-variant: normal;
     letter-spacing: 0;
-    font-size: 1em; }
+    font-size: 1em;
+    margin-left: 14px; }
   .checkbox-nice.checkbox-inline > label {
     margin-left: 16px; }
   .checkbox-nice label:before {
