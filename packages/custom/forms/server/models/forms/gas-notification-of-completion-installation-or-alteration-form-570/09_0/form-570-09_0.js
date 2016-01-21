@@ -2,7 +2,6 @@
     
 var formSchema={
     model: {
-        
     },
     fields: [
         {
@@ -92,7 +91,7 @@ var formSchema={
             fields: [
                 {
                     key: 'inspectionTypeRequested',
-                    type: 'multiCheckbox',
+                    type: 'bcsa_multiCheckbox',
                     templateOptions: {
                         label: 'Inspection type requested',
                         options: [
@@ -135,7 +134,7 @@ var formSchema={
                 },
                 {
                     key: 'declaration',
-                    type: 'checkbox',
+                    type: 'bcsa_checkbox',
                     templateOptions: {
                         label: 'Please note that checking this box and submitting this form to BC Safety Authority constitutes your declaration as the Gas Fitter named above that the gas system has been left in a safe operating condition, and you confirm compliance under the Safety Standards Act. Submission of this form has the same effect as submitting a handwritten signature.',
                         required: true,

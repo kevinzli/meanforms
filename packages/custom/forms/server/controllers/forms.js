@@ -17,6 +17,7 @@ module.exports = function(Forms) {
          */
         create: function(req, res) {
             var form = new Form(req.body);
+            form.status='new';
 
             //get the form fields template
             var formTemplate= formSchemas.getFormSchema(form.formId, form.formVersion);
