@@ -135,26 +135,30 @@ angular.module('mean.forms').config(function(formlyConfigProvider) {
         defaultOptions: {
             noFormControl: false
         },
-        apiCheck: check => ({
-            templateOptions: {
+        apiCheck: function apiCheck(check) {
+            return {
+              templateOptions: {
                 options: check.arrayOf(check.object),
                 labelProp: check.string.optional,
                 valueProp: check.string.optional
-            }
-        })
+              }
+            };
+        }
     });
 
     formlyConfigProvider.setType({
         name: 'bcsa_multiCheckbox',
         templateUrl: 'bcsa_multiCheckbox.html',
         wrapper: ['bootstrapLabel', 'bootstrapHasError'],
-        apiCheck: check => ({
-            templateOptions: {
+        apiCheck: function apiCheck(check) {
+            return {
+              templateOptions: {
                 options: check.arrayOf(check.object),
                 labelProp: check.string.optional,
                 valueProp: check.string.optional
-            }
-        }),
+              }
+            };
+        },
         defaultOptions: {
             noFormControl: false,
             ngModelAttrs: {
@@ -204,9 +208,9 @@ angular.module('mean.forms').config(function(formlyConfigProvider) {
 
             function setModel() {
                 $scope.model[opts.key] = [];
-                angular.forEach($scope.multiCheckbox.checked, (checkbox, index) => {
+                angular.forEach($scope.multiCheckbox.checked, function (checkbox, index) {
                     if (checkbox) {
-                        $scope.model[opts.key].push(to.options[index][to.valueProp || 'value']);
+                      $scope.model[opts.key].push(to.options[index][to.valueProp || 'value']);
                     }
                 });
 
@@ -239,11 +243,13 @@ angular.module('mean.forms').config(function(formlyConfigProvider) {
         name: 'bcsa_checkbox',
         templateUrl: 'bcsa_checkbox.html',
         wrapper: ['bootstrapHasError'],
-        apiCheck: check => ({
-            templateOptions: {
+        apiCheck: function apiCheck(check) {
+            return {
+              templateOptions: {
                 label: check.string
-            }
-        })
+              }
+            };
+          }
     });
 
     formlyConfigProvider.setType({
