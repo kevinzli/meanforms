@@ -16,47 +16,50 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
             //parameters
             vm.formId = $stateParams.formId;
             vm.formVersion = $stateParams.version;
-            vm.formObjectId = $stateParams.formObjectId;
 
-            vm.isCreateNew = vm.formObjectId?false:true;
-            vm.viewmode=vm.formObjectId?true:false;
+            if (vm.formId && vm.formVersion) {
+                vm.formObjectId = $stateParams.formObjectId;
+
+                vm.isCreateNew = vm.formObjectId ? false : true;
+                vm.viewmode = vm.formObjectId ? true : false;
 
 
-            var form = _.find($scope.forms, {
-                'id': vm.formId
-            });
+                var form = _.find($scope.forms, {
+                    'id': vm.formId
+                });
 
-            if (form) {
-                vm.formName = form.name;
-            }
-
-            //get the dynamic form from javascript objects
-            Forms.getFormSchema(vm.formId, vm.formVersion).then(function(response) {
-                var dynamicForm = response.data;
-                
-                // An array of our form fields with configuration
-                // and options set. We make reference to this in
-                // the 'fields' attribute on the  element
-                vm.fields = dynamicForm.fields;
-                vm.originalFields = angular.copy(vm.fields);
-
-                //get the form model for existing form
-                if(vm.formObjectId){
-                    Forms.getForm(vm.formObjectId).then(function(response){
-                        vm.model= response.data.formModel;
-                        vm.viewmode=true;
-                        vm.options.formState.disabled=vm.viewmode;
-                    }, function(response){
-                        console.log("error to get the form model" + vm.formObjectId);
-                    });
-                }else{
-                    // The model object that we reference
-                    // on the  element in index.html
-                    vm.model = dynamicForm.model;
+                if (form) {
+                    vm.formName = form.name;
                 }
-            }, function(response) {
-                console.log("error to get the form schema" + vm.formId);
-            });
+
+                //get the dynamic form from javascript objects
+                Forms.getFormSchema(vm.formId, vm.formVersion).then(function(response) {
+                    var dynamicForm = response.data;
+
+                    // An array of our form fields with configuration
+                    // and options set. We make reference to this in
+                    // the 'fields' attribute on the  element
+                    vm.fields = dynamicForm.fields;
+                    vm.originalFields = angular.copy(vm.fields);
+
+                    //get the form model for existing form
+                    if (vm.formObjectId) {
+                        Forms.getForm(vm.formObjectId).then(function(response) {
+                            vm.model = response.data.formModel;
+                            vm.viewmode = true;
+                            vm.options.formState.disabled = vm.viewmode;
+                        }, function(response) {
+                            console.log("error to get the form model" + vm.formObjectId);
+                        });
+                    } else {
+                        // The model object that we reference
+                        // on the  element in index.html
+                        vm.model = dynamicForm.model;
+                    }
+                }, function(response) {
+                    console.log("error to get the form schema" + vm.formId);
+                });
+            }
         }, function(response) {
             console.log("error to get all schemas");
         });
@@ -73,7 +76,7 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
 
         // function definition
         function finishWizard() {
-            if(vm.options.formState.disabled){
+            if (vm.options.formState.disabled) {
                 //alert("Form is in View Mode!");
                 return;
             };
@@ -137,11 +140,11 @@ angular.module('mean.forms').config(function(formlyConfigProvider) {
         },
         apiCheck: function apiCheck(check) {
             return {
-              templateOptions: {
-                options: check.arrayOf(check.object),
-                labelProp: check.string.optional,
-                valueProp: check.string.optional
-              }
+                templateOptions: {
+                    options: check.arrayOf(check.object),
+                    labelProp: check.string.optional,
+                    valueProp: check.string.optional
+                }
             };
         }
     });
@@ -152,11 +155,11 @@ angular.module('mean.forms').config(function(formlyConfigProvider) {
         wrapper: ['bootstrapLabel', 'bootstrapHasError'],
         apiCheck: function apiCheck(check) {
             return {
-              templateOptions: {
-                options: check.arrayOf(check.object),
-                labelProp: check.string.optional,
-                valueProp: check.string.optional
-              }
+                templateOptions: {
+                    options: check.arrayOf(check.object),
+                    labelProp: check.string.optional,
+                    valueProp: check.string.optional
+                }
             };
         },
         defaultOptions: {
@@ -208,9 +211,9 @@ angular.module('mean.forms').config(function(formlyConfigProvider) {
 
             function setModel() {
                 $scope.model[opts.key] = [];
-                angular.forEach($scope.multiCheckbox.checked, function (checkbox, index) {
+                angular.forEach($scope.multiCheckbox.checked, function(checkbox, index) {
                     if (checkbox) {
-                      $scope.model[opts.key].push(to.options[index][to.valueProp || 'value']);
+                        $scope.model[opts.key].push(to.options[index][to.valueProp || 'value']);
                     }
                 });
 
@@ -245,11 +248,11 @@ angular.module('mean.forms').config(function(formlyConfigProvider) {
         wrapper: ['bootstrapHasError'],
         apiCheck: function apiCheck(check) {
             return {
-              templateOptions: {
-                label: check.string
-              }
+                templateOptions: {
+                    label: check.string
+                }
             };
-          }
+        }
     });
 
     formlyConfigProvider.setType({
