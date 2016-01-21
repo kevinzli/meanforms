@@ -5,9 +5,54 @@ var formSchema={
     },
     fields: [
         {
+            name: 'step0',
+            formName: 'vm.forms.step0',
+            title: 'START',
+            header: '',
+            buttonText: 'Continue',
+            fields: [
+                {
+                    key: 'installationPermitNumber',
+                    type: 'input',
+                    templateOptions: {
+                        label: 'Installation Permit Number',
+                        required: true
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
+                    }
+                },
+                {
+                    key: 'commissioningApprovalNumber',
+                    type: 'input',
+                    templateOptions: {
+                        label: 'Commissioning Approval Number*',
+                        required: false
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
+                    }
+                },
+                {
+                    key: 'productApprovalNumber',
+                    type: 'input',
+                    templateOptions: {
+                        label: 'Product Approval Number*',
+                        required: false
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
+                    }
+                },
+                {
+                    template: '<div><p>* If your are submitting for commissioning approval or product approval, please also provide Installation Permit Number above.</p></div>'
+                }
+            ]
+        },
+        {
             name: 'step1',
             formName: 'vm.forms.step1',
-            title: 'A. SITE INFORMATION',
+            title: '',
             header: 'A. SITE INFORMATION',
             buttonText: 'Continue',
             fields: [
@@ -58,7 +103,7 @@ var formSchema={
         {
             name: 'step2',
             formName: 'vm.forms.step2',
-            title: 'B. PERMIT HOLDER DETAILS',
+            title: '',
             header: 'B. PERMIT HOLDER DETAILS',
             buttonText: 'Continue',
             fields: [
@@ -109,7 +154,7 @@ var formSchema={
         {
             name: 'step3',
             formName: 'vm.forms.step3',
-            title: 'C. TYPE OF REQUEST',
+            title: '',
             header: 'C. TYPE OF REQUEST',
             buttonText: 'Continue',
             fields: [
@@ -141,7 +186,7 @@ var formSchema={
         {
             name: 'step4',
             formName: 'vm.forms.step4',
-            title: 'D. DECLARATION',
+            title: 'FINISH',
             header: 'D. DECLARATION',
             buttonText: 'Submit',
             fields: [
