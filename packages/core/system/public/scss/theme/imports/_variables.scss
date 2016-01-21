@@ -1,0 +1,118 @@
+//BASICS
+
+$primary-color: #0067b0;
+$primary-color-dark: darken($primary-color, 10%);
+$primary-color-light: lighten($primary-color, 10%);
+$primary-color-verylight: lighten($primary-color, 25%);
+
+$secondary-color: #009f5e;
+$secondary-color-dark: darken($secondary-color, 10%);
+
+$notactive-color: #bbb;
+$notactive-color-dark: #666;
+
+//$notactive-color: #5f9ddc;
+//$notactive-color-dark: #104E8B;
+
+$fuchsia-color: #c60751;
+$fuchsia-color-dark: #c60751;
+
+$red-color: #e84e40;
+$red-color-dark: #dd191d;
+
+$yellow-color: #ffc107;
+$yellow-color-dark: #ffa000;
+
+$green-color: $secondary-color;
+$green-color-dark: $secondary-color-dark;
+
+$light-green-color: #9fcf67;
+$light-green-color-dark: #4f8c07;
+
+$orange-color: #f7941e;
+$orange-color-dark: #b16102;
+
+$light-orange-color: #fdb825;
+$light-orange-color-dark: #9c6b02;
+
+$purple-color: #9c27b0;
+$purple-color-dark: #7b1fa2;
+
+$gray-color: #888;
+$gray-color-verydark: #333;
+$gray-color-dark: #666;
+$gray-color-light: #ccc;
+
+$light-gray-color: #f3f3f3;
+$light-gray-color-dark: #C9C9C9;
+
+$cyan-color: #00bcd4;
+$cyan-color-dark: #0097a7;
+
+$teal-color: #009688;
+$teal-color-dark: #00796b;
+
+$light-blue-color: #1874CD;
+$light-blue-color-dark: #135BA1;
+
+//global text color
+$text-color: #333;
+
+//global bg color
+$main-bg-color: #ddd;
+
+//global link color
+$link-color: $primary-color;
+$link-color-hover: $primary-color;
+
+$default-bg-hover-color: #f8f8f8;
+
+
+//TYPOGRAPHY
+
+//font families
+$font-stack: 'Open Sans', sans-serif;
+
+//headings typo
+$font-size-h1: 2em;
+$font-size-h2: 1.6em;
+$font-size-h3: 1.4em;
+$font-size-h4: 1.2em;
+$font-size-h5: 1em;
+$font-size-h6: 0.875em;
+
+$font-hx-weight: 300;
+
+$line-height-base: 1.428571429 !default;
+
+$heading-font-family: $font-stack;
+
+
+//GRID - media queries breakpoints
+$break-xxs-min: 420px;
+$break-xs-min: 768px;
+$break-sm-min: 992px;
+$break-md-min: 1200px;
+
+$break-xxs-max: ($break-xxs-min - 1);
+$break-xs-max: ($break-xs-min - 1);
+$break-sm-max: ($break-sm-min - 1);
+$break-md-max: ($break-md-min - 1);
+
+$container-max-width: 100%;
+
+
+//BOXED LAYOUT
+$boxed-layout-max-width: 1200px;
+
+$boxed-layout-breakdown2: 1260px;
+$boxed-layout-max-width2: 1140px;
+
+$boxed-layout-breakdown3: $break-md-max;
+$boxed-layout-max-width3: 1024px;
+
+
+//OTHER
+$border-radius-base: 2px !default;
+$border-radius-large: 3px !default;
+$border-radius-small: 1px !default;

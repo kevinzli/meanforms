@@ -20,6 +20,7 @@ SystemPackage.register(function(app, auth, database, circles) {
   SystemPackage.routes(app, auth, database);
 
   SystemPackage.aggregateAsset('css', 'common.css');
+  SystemPackage.aggregateAsset('css', 'theme_styles.css', {global:true, weight: 4, group:'header'});
   SystemPackage.angularDependencies(['ui.router', 'mean-factory-interceptor']);
   
 
