@@ -16,6 +16,9 @@ var formSchema={
                     type: 'input',
                     templateOptions: {
                         label: 'Installation Name',
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -24,6 +27,9 @@ var formSchema={
                     templateOptions: {
                         label: 'Site Address (suite/unit, streetnumber, street name, street type)',
                         required: true
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -32,6 +38,9 @@ var formSchema={
                     templateOptions: {
                         label: 'City',
                         required: true
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -39,6 +48,9 @@ var formSchema={
                     type: 'input',
                     templateOptions: {
                         label: 'Telephone',
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
             ]
@@ -57,12 +69,18 @@ var formSchema={
                         label: 'Contractor Name or Homeowner',
                         required: true
                     },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
+                    }
                 },
                 {
                     key: 'contractorLicenceNumber',
                     type: 'input',
                     templateOptions: {
                         label: 'Contractor Licence Number (if applicable)'
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -71,6 +89,9 @@ var formSchema={
                     templateOptions: {
                         label: 'Work performed by (please type name)',
                         required: true
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -78,6 +99,9 @@ var formSchema={
                     type: 'input',
                     templateOptions: {
                         label: 'Gas Fitter Number (if applicable)'
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 }
             ]
@@ -104,6 +128,9 @@ var formSchema={
                         valueProp: 'id',
                         labelProp: 'title',
                         required: true
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -123,6 +150,9 @@ var formSchema={
                     template: '<p>I, <input class="formly-field-input" ng-model="model[options.key]">, a gas fitter for the above listed licenced contractor or a homeowner, hereby declare that the gas installation authorized under above-mentioned permit number has been installed to comply with the Safety Standards Act and Regulations of British Columbia. </p>',
                     templateOptions: {
                         required: true,
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -130,6 +160,9 @@ var formSchema={
                     template: '<p> Placed in service (please provide date mm/dd/yyyy): <input class="formly-field-input" ng-model="model[options.key]"></p>',
                     templateOptions: {
                         required: true,
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -138,6 +171,9 @@ var formSchema={
                     templateOptions: {
                         label: 'Please note that checking this box and submitting this form to BC Safety Authority constitutes your declaration as the Gas Fitter named above that the gas system has been left in a safe operating condition, and you confirm compliance under the Safety Standards Act. Submission of this form has the same effect as submitting a handwritten signature.',
                         required: true,
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 },
                 {
@@ -146,6 +182,9 @@ var formSchema={
                     templateOptions: {
                         label: 'Date of submission (MMDDYYYY)',
                         required: true,
+                    },
+                    expressionProperties: {
+                        "templateOptions.disabled": "formState.disabled"
                     }
                 }
             ]

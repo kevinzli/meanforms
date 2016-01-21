@@ -9,6 +9,10 @@ function formsService($http) {
    	    return $http.get('/api/formschemas/'+id+'/'+version);
    	}
 
+    function getForm(objectId){
+        return $http.get('/api/forms/'+objectId);
+    }
+
    	function createForm(formId, version, formModel){
    		return $http.post('/api/forms/new', {
    			formId: formId,
@@ -21,7 +25,8 @@ function formsService($http) {
       name: 'forms',
       getForms: getForms,
       getFormSchema: getFormSchema,
-      createForm: createForm
+      createForm: createForm,
+      getForm: getForm
     };
   }
 

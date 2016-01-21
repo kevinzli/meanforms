@@ -17,6 +17,8 @@ module.exports = function(Forms, app, auth, database) {
     res.json(forms.getFormSchema(req.params.formId, req.params.version));
   });
 
+  app.get('/api/forms/:objectId', forms.getForm);
+
   app.post('/api/forms/new', forms.create);
 
   app.get('/api/forms/example/anyone', function(req, res, next) {
