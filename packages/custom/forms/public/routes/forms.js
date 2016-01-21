@@ -7,9 +7,9 @@ angular.module('mean.forms').config(['$stateProvider',
       templateUrl: 'forms/views/index.html'
     })
     .state('form', {
-        url: '/forms/:formId/:version',
+        url: '/forms/:formId/:version/:formObjectId?',
         templateUrl: 'forms/views/form.html',
         controller: 'FormsController as vm'
-      });;
+      });
   }
 ]);
