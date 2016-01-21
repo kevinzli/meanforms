@@ -526,8 +526,8 @@ var formSchema = {
 					key: 'details_1_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN #',
-						required: true
+						label: 'CRN # (mandatory)',
+						required: false
 					},
 		            expressionProperties: {
 		                "templateOptions.disabled": "formState.disabled"
@@ -588,6 +588,378 @@ var formSchema = {
 				},{
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_1_heatingSurface_unit',
+					type: 'bcsa_multiCheckbox',
+					templateOptions: {
+						label: '',
+						options: [{
+							id: "m2",
+							title: "m2"
+						}, {
+							id: "kw",
+							title: "KW"
+						}],
+						valueProp: 'id',
+						labelProp: 'title',
+						//required: true
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}]
+			}]
+		},{
+			key: 'details_2',
+			wrapper: 'panel',
+			templateOptions: {
+				label: '',
+			},
+			fieldGroup: [{
+				className: 'row',
+				fieldGroup: [{
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_2_unitNumber',
+					type: 'input',
+					templateOptions: {
+						label: '# of Units'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_2_manufacturer',
+					type: 'input',
+					templateOptions: {
+						label: 'Manufacturer'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_2_yearBuilt',
+					type: 'input',
+					templateOptions: {
+						label: 'Year Built'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_2_crn',
+					type: 'input',
+					templateOptions: {
+						label: 'CRN # (mandatory)',
+						required: false
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}]
+			}, {
+				className: 'row',
+				fieldGroup: [{
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_2_serialNumber',
+					type: 'input',
+					templateOptions: {
+						label: 'Serial #'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},  {
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_2_capacity',
+					type: 'input',
+					templateOptions: {
+						label: 'Capacity'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_2_capacity_unit',
+					type: 'bcsa_multiCheckbox',
+					templateOptions: {
+						label: '',
+						options: [{
+							id: "btusperhour",
+							title: "Btus/hr"
+						}, {
+							id: "lbperhour",
+							title: "Lb/hr"
+						}],
+						valueProp: 'id',
+						labelProp: 'title',
+						//required: true
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},  {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_2_heatingSurface',
+					type: 'input',
+					templateOptions: {
+						label: 'Heating Surface'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},{
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_2_heatingSurface_unit',
+					type: 'bcsa_multiCheckbox',
+					templateOptions: {
+						label: '',
+						options: [{
+							id: "m2",
+							title: "m2"
+						}, {
+							id: "kw",
+							title: "KW"
+						}],
+						valueProp: 'id',
+						labelProp: 'title',
+						//required: true
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}]
+			}]
+		},{
+			key: 'details_3',
+			wrapper: 'panel',
+			templateOptions: {
+				label: '',
+			},
+			fieldGroup: [{
+				className: 'row',
+				fieldGroup: [{
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_3_unitNumber',
+					type: 'input',
+					templateOptions: {
+						label: '# of Units'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_3_manufacturer',
+					type: 'input',
+					templateOptions: {
+						label: 'Manufacturer'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_3_yearBuilt',
+					type: 'input',
+					templateOptions: {
+						label: 'Year Built'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_3_crn',
+					type: 'input',
+					templateOptions: {
+						label: 'CRN # (mandatory)',
+						required: false
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}]
+			}, {
+				className: 'row',
+				fieldGroup: [{
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_3_serialNumber',
+					type: 'input',
+					templateOptions: {
+						label: 'Serial #'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},  {
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_3_capacity',
+					type: 'input',
+					templateOptions: {
+						label: 'Capacity'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_3_capacity_unit',
+					type: 'bcsa_multiCheckbox',
+					templateOptions: {
+						label: '',
+						options: [{
+							id: "btusperhour",
+							title: "Btus/hr"
+						}, {
+							id: "lbperhour",
+							title: "Lb/hr"
+						}],
+						valueProp: 'id',
+						labelProp: 'title',
+						//required: true
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},  {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_3_heatingSurface',
+					type: 'input',
+					templateOptions: {
+						label: 'Heating Surface'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},{
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_3_heatingSurface_unit',
+					type: 'bcsa_multiCheckbox',
+					templateOptions: {
+						label: '',
+						options: [{
+							id: "m2",
+							title: "m2"
+						}, {
+							id: "kw",
+							title: "KW"
+						}],
+						valueProp: 'id',
+						labelProp: 'title',
+						//required: true
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}]
+			}]
+		},{
+			key: 'details_4',
+			wrapper: 'panel',
+			templateOptions: {
+				label: '',
+			},
+			fieldGroup: [{
+				className: 'row',
+				fieldGroup: [{
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_4_unitNumber',
+					type: 'input',
+					templateOptions: {
+						label: '# of Units'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_4_manufacturer',
+					type: 'input',
+					templateOptions: {
+						label: 'Manufacturer'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_4_yearBuilt',
+					type: 'input',
+					templateOptions: {
+						label: 'Year Built'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_4_crn',
+					type: 'input',
+					templateOptions: {
+						label: 'CRN # (mandatory)',
+						required: false
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}]
+			}, {
+				className: 'row',
+				fieldGroup: [{
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_4_serialNumber',
+					type: 'input',
+					templateOptions: {
+						label: 'Serial #'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},  {
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_4_capacity',
+					type: 'input',
+					templateOptions: {
+						label: 'Capacity'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				}, {
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_4_capacity_unit',
+					type: 'bcsa_multiCheckbox',
+					templateOptions: {
+						label: '',
+						options: [{
+							id: "btusperhour",
+							title: "Btus/hr"
+						}, {
+							id: "lbperhour",
+							title: "Lb/hr"
+						}],
+						valueProp: 'id',
+						labelProp: 'title',
+						//required: true
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},  {
+					className: 'col-sm-3 col-md-3 col-lg-3',
+					key: 'details_4_heatingSurface',
+					type: 'input',
+					templateOptions: {
+						label: 'Heating Surface'
+					},
+		            expressionProperties: {
+		                "templateOptions.disabled": "formState.disabled"
+		            }
+				},{
+					className: 'col-sm-2 col-md-2 col-lg-2',
+					key: 'details_4_heatingSurface_unit',
 					type: 'bcsa_multiCheckbox',
 					templateOptions: {
 						label: '',
