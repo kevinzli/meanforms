@@ -309,7 +309,7 @@ input[type="radio"] {
 	padding-left: 15px;
 
 	input[type=checkbox] {
-		visibility: hidden;
+    display: none;
 	}
 	label {
 		padding-top: 3px;
@@ -318,6 +318,7 @@ input[type="radio"] {
     font-variant: normal;
     letter-spacing: 0;
     font-size: 1em;
+    margin-left: 14px;
 	}
 	&.checkbox-inline > label {
 		margin-left: 16px;
