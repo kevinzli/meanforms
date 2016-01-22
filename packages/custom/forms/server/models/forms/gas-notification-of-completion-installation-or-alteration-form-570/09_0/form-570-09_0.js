@@ -16,7 +16,7 @@ var formSchema={
                     type: 'input',
                     templateOptions: {
                         label: 'Installation Permit Number',
-                        required: true
+                        required: false
                     },
                     expressionProperties: {
                         "templateOptions.disabled": "formState.disabled"
