@@ -51,7 +51,7 @@ angular.module('mgo-angular-wizard').directive('wzStep', function() {
 });
 
 //wizard directive
-angular.module('mgo-angular-wizard').directive('wizard', function() {
+angular.module('mgo-angular-wizard').directive('wizard', ['$window', function($window) {
     return {
         restrict: 'EA',
         replace: true,
@@ -172,6 +172,7 @@ angular.module('mgo-angular-wizard').directive('wizard', function() {
                         }
                     });
                 }
+                $window.scrollTo(0, 0);
             };
 
             function canEnterStep(step) {
@@ -332,7 +333,7 @@ angular.module('mgo-angular-wizard').directive('wizard', function() {
             };
         }]
     };
-});
+}]);
 function wizardButtonDirective(action) {
     angular.module('mgo-angular-wizard')
         .directive(action, function() {
