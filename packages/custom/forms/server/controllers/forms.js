@@ -22,16 +22,38 @@ function sendMail(mailOptions) {
     });
 }
 
-function write_csr_email(req, form, formName, mailOptions) {
+function write_csr_email(req, form, formName, mailOptions, formTemplate) {
     mailOptions.html = [
       'Hi,<br />',
       'A ' + formName +' has been submitted.<br />',
+      generateFormContent(form, formTemplate),
       'Please click on the link below or paste this into your browser to review the form:',
       'http://' + req.headers.host + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id
     ].join('<br />');
     mailOptions.subject = 'Notification of form submission';
     return mailOptions;
   }
+
+function generateFormContent(form, formTemplate){
+    var content='';
+    content += 'Submitted on ' + form.created +'<br />';
+    content += 'Submitted values are:<br />';
+
+    _.forEach(formTemplate.fields, function(step, index){
+        _.forEach(step.fields, function(field,index){
+            if(_.has(form.formModel, field.key)){
+                if(!step.headerShowed&&step.header){
+                    content += '<br />---&nbsp;'+ step.header +'&nbsp;---' +'<br /><br />';
+                    step.headerShowed=true;
+                }
+
+                content += (field.templateOptions.labelforEmail||field.templateOptions.label) +':&nbsp;'+ form.formModel[field.key] +'<br />';
+            }
+        })
+    });
+
+    return content;
+}
 
 module.exports = function(Forms) {
 
@@ -71,7 +93,11 @@ module.exports = function(Forms) {
                         from: config.emailFrom
                     };
 
-                mailOptions = write_csr_email(req, form, formName, mailOptions);
+                //get the form fields template
+                var formTemplate= formSchemas.getFormSchema(form.formId, form.formVersion); 
+                console.log("formtemplate first step: "+formTemplate.fields[0].name);
+
+                mailOptions = write_csr_email(req, form, formName, mailOptions, formTemplate);
                 sendMail(mailOptions);
 
                 res.json(form);
