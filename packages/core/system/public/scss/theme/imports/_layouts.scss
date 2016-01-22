@@ -10,7 +10,7 @@ html, body {
 }
 body {
 	color: $text-color;
-	background-color: #fcfcfc;
+	background-color: #f6f6f6;
 	background-size: 220px 220px;
 	margin: 0 0 0 0;
 }
@@ -24,6 +24,7 @@ h1 {
 	margin: 0 0 20px 0;
 	padding-left: 14px;
 	font-size: $font-size-h1;
+	font-weight: 400;
 }
 h2 {
 	clear: both;
@@ -64,12 +65,12 @@ a {
 	}
 }
 .container {
-	padding-left: 8px;
-	padding-right: 8px;
+	padding-left: 10px;
+	padding-right: 10px;
 
 	@media (max-width: $break-xs-max) {
-		padding-left: 5px;
-		padding-right: 5px;
+		padding-left: 8px;
+		padding-right: 8px;
 	}
 }
 .row {
@@ -272,6 +273,15 @@ a {
 	margin: 0 0 10px 0;
 	max-width: $container-max-width;
 	width: 100%;
+	padding-top: 10px;
+}
+section {
+	section {
+ 		.container {
+			background-color: #fff;
+			padding-top: 20px;
+		}
+	}
 }
 .footer-container {
 	position: absolute;
@@ -457,7 +467,8 @@ a {
 	}
 }
 .steps-indicator {
-  height: 60px !important;
+  height: 80px !important;
+  padding: 50px 0 0 0;
   li {
 	line-height: 1em !important;
 	margin-bottom: 1em !important;
