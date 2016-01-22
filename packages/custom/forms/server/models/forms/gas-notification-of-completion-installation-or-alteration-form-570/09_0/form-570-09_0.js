@@ -194,6 +194,7 @@ var formSchema={
                     key: 'signature',
                     template: '<p>I, <input class="formly-field-input" ng-model="model[options.key]">, a gas fitter for the above listed licenced contractor or a homeowner, hereby declare that the gas installation authorized under above-mentioned permit number has been installed to comply with the Safety Standards Act and Regulations of British Columbia. </p>',
                     templateOptions: {
+                        label: 'Gas fitter or homeowner name',
                         required: true,
                     },
                     expressionProperties: {
@@ -204,6 +205,7 @@ var formSchema={
                     key: 'dateSigned',
                     template: '<p> Placed in service (please provide date mm/dd/yyyy): <input class="formly-field-input" ng-model="model[options.key]"></p>',
                     templateOptions: {
+                        label: 'Placed in service (please provide date)',
                         required: true,
                     },
                     expressionProperties: {
@@ -216,6 +218,7 @@ var formSchema={
                     templateOptions: {
                         label: 'Please note that checking this box and submitting this form to BC Safety Authority constitutes your declaration as the Gas Fitter named above that the gas system has been left in a safe operating condition, and you confirm compliance under the Safety Standards Act. Submission of this form has the same effect as submitting a handwritten signature.',
                         required: true,
+                        labelforEmail: 'I agree'
                     },
                     expressionProperties: {
                         "templateOptions.disabled": "formState.disabled"

@@ -12,31 +12,32 @@ var formSchema = {
 		buttonText: 'Continue',
 		fields: [{
 			key: 'permitWorkClass',
-			type: 'bcsa_multiCheckbox',
+			type: 'bcsa_radio',
 			templateOptions: {
-				label: 'please choose only one option',
+				//label: 'please choose only one option',
+				label: '',
 				options: [{
-					id: "hotWaterBoiler",
-					title: "Hot Water Boiler"
+					value: "hotWaterBoiler",
+					name: "Hot Water Boiler"
 				}, {
-					id: "potableHotWaterBoiler",
-					title: "Potable Hot Water Boiler"
+					value: "potableHotWaterBoiler",
+					name: "Potable Hot Water Boiler"
 				}, {
-					id: "thermalFluidBoilerLp",
-					title: "Thermal Fluid Boiler LP"
+					value: "thermalFluidBoilerLp",
+					name: "Thermal Fluid Boiler LP"
 				}, {
-					id: "thermalFluidBoilerHp",
-					title: "Thermal Fluid Boiler HP"
+					value: "thermalFluidBoilerHp",
+					name: "Thermal Fluid Boiler HP"
 				}, {
-					id: "steamBoilerLp",
-					title: "Steam Boiler LP"
+					value: "steamBoilerLp",
+					name: "Steam Boiler LP"
 				}, {
-					id: "steamBoilerHp",
-					title: "Steam Boiler HP"
+					value: "steamBoilerHp",
+					name: "Steam Boiler HP"
 				}],
-				valueProp: 'id',
-				labelProp: 'title',
-				//required: true
+				// valueProp: 'id',
+				// labelProp: 'title',
+				required: true
 			},
             expressionProperties: {
                 "templateOptions.disabled": "formState.disabled"
@@ -69,18 +70,18 @@ var formSchema = {
             }
 		}, {
 			key: 'licenseType',
-			type: 'bcsa_multiCheckbox',
+			type: 'bcsa_radio',
 			templateOptions: {
 				label: 'License type',
 				options: [{
-					id: "a",
-					title: "A"
+					value: "a",
+					name: "A"
 				}, {
-					id: "b",
-					title: "B"
+					value: "b",
+					name: "B"
 				}],
-				valueProp: 'id',
-				labelProp: 'title',
+				//valueProp: 'id',
+				//labelProp: 'title',
 				//required: true
 			},
             expressionProperties: {
@@ -108,18 +109,18 @@ var formSchema = {
             }
 		}, {
 			key: 'preferredMethodofContact',
-			type: 'bcsa_multiCheckbox',
+			type: 'bcsa_radio',
 			templateOptions: {
 				label: 'Preferred method of contact',
 				options: [{
-					id: "email",
-					title: "Email"
+					value: "email",
+					name: "Email"
 				}, {
-					id: "mail",
-					title: "Mail"
+					value: "mail",
+					name: "Mail"
 				}],
-				valueProp: 'id',
-				labelProp: 'title',
+				//valueProp: 'id',
+				//labelProp: 'title',
 				//required: true
 			},
             expressionProperties: {
@@ -339,18 +340,18 @@ var formSchema = {
             }
 		}, {
 			key: 'pipingDesignRegistrationRequired',
-			type: 'bcsa_multiCheckbox',
+			type: 'bcsa_radio',
 			templateOptions: {
 				label: 'Piping Design Registration Required?',
 				options: [{
-					id: "no",
-					title: "NO"
+					value: "no",
+					name: "NO"
 				}, {
-					id: "yes",
-					title: "YES"
+					value: "yes",
+					name: "YES"
 				}],
-				valueProp: 'id',
-				labelProp: 'title',
+				//valueProp: 'id',
+				//labelProp: 'title',
 				//required: true
 			},
             expressionProperties: {
@@ -558,18 +559,18 @@ var formSchema = {
 				}, {
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_1_capacity_unit',
-					type: 'bcsa_multiCheckbox',
+					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
 						options: [{
-							id: "btusperhour",
-							title: "Btus/hr"
+							value: "btusperhour",
+							name: "Btus/hr"
 						}, {
-							id: "lbperhour",
-							title: "Lb/hr"
+							value: "lbperhour",
+							name: "Lb/hr"
 						}],
-						valueProp: 'id',
-						labelProp: 'title',
+						//valueProp: 'id',
+						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -588,18 +589,18 @@ var formSchema = {
 				},{
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_1_heatingSurface_unit',
-					type: 'bcsa_multiCheckbox',
+					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
 						options: [{
-							id: "m2",
-							title: "m2"
+							value: "m2",
+							name: "m2"
 						}, {
-							id: "kw",
-							title: "KW"
+							value: "kw",
+							name: "KW"
 						}],
-						valueProp: 'id',
-						labelProp: 'title',
+						//valueProp: 'id',
+						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -682,18 +683,18 @@ var formSchema = {
 				}, {
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_2_capacity_unit',
-					type: 'bcsa_multiCheckbox',
+					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
 						options: [{
-							id: "btusperhour",
-							title: "Btus/hr"
+							value: "btusperhour",
+							name: "Btus/hr"
 						}, {
-							id: "lbperhour",
-							title: "Lb/hr"
+							value: "lbperhour",
+							name: "Lb/hr"
 						}],
-						valueProp: 'id',
-						labelProp: 'title',
+						//valueProp: 'id',
+						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -712,18 +713,18 @@ var formSchema = {
 				},{
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_2_heatingSurface_unit',
-					type: 'bcsa_multiCheckbox',
+					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
 						options: [{
-							id: "m2",
-							title: "m2"
+							value: "m2",
+							name: "m2"
 						}, {
-							id: "kw",
-							title: "KW"
+							value: "kw",
+							name: "KW"
 						}],
-						valueProp: 'id',
-						labelProp: 'title',
+						//valueProp: 'id',
+						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -806,18 +807,18 @@ var formSchema = {
 				}, {
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_3_capacity_unit',
-					type: 'bcsa_multiCheckbox',
+					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
 						options: [{
-							id: "btusperhour",
-							title: "Btus/hr"
+							value: "btusperhour",
+							name: "Btus/hr"
 						}, {
-							id: "lbperhour",
-							title: "Lb/hr"
+							value: "lbperhour",
+							name: "Lb/hr"
 						}],
-						valueProp: 'id',
-						labelProp: 'title',
+						//valueProp: 'id',
+						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -836,18 +837,18 @@ var formSchema = {
 				},{
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_3_heatingSurface_unit',
-					type: 'bcsa_multiCheckbox',
+					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
 						options: [{
-							id: "m2",
-							title: "m2"
+							value: "m2",
+							name: "m2"
 						}, {
-							id: "kw",
-							title: "KW"
+							value: "kw",
+							name: "KW"
 						}],
-						valueProp: 'id',
-						labelProp: 'title',
+						//valueProp: 'id',
+						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -930,18 +931,18 @@ var formSchema = {
 				}, {
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_4_capacity_unit',
-					type: 'bcsa_multiCheckbox',
+					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
 						options: [{
-							id: "btusperhour",
-							title: "Btus/hr"
+							value: "btusperhour",
+							name: "Btus/hr"
 						}, {
-							id: "lbperhour",
-							title: "Lb/hr"
+							value: "lbperhour",
+							name: "Lb/hr"
 						}],
-						valueProp: 'id',
-						labelProp: 'title',
+						//valueProp: 'id',
+						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -960,18 +961,18 @@ var formSchema = {
 				},{
 					className: 'col-sm-2 col-md-2 col-lg-2',
 					key: 'details_4_heatingSurface_unit',
-					type: 'bcsa_multiCheckbox',
+					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
 						options: [{
-							id: "m2",
-							title: "m2"
+							value: "m2",
+							name: "m2"
 						}, {
-							id: "kw",
-							title: "KW"
+							value: "kw",
+							name: "KW"
 						}],
-						valueProp: 'id',
-						labelProp: 'title',
+						//valueProp: 'id',
+						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
