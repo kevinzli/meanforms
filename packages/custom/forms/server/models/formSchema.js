@@ -9,12 +9,14 @@ var forms= [
     {
      	id:"570",
      	name: "Gas Notification of Completion, Installation or Alteration Form",
-        version: "09_0"
+        version: "09_0",
+        label: "FRM 0570-09 (2015-06-09)"
     },
     {
         id:"0823",
         name: "Boiler Installation Permit Form",
-        version: "05"
+        version: "05",
+        label: "FRM-0823-05 (2015-10-05)"
     },
     // {
     //     id:"206",

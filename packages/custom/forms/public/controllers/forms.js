@@ -56,6 +56,7 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
                         // on the  element in index.html
                         vm.model = dynamicForm.model;
                     }
+                    vm.formLabel = form.label;
                 }, function(response) {
                     console.log("error to get the form schema" + vm.formId);
                 });
