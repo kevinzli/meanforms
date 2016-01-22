@@ -7,7 +7,7 @@ var formSchema = {
 	fields: [{
 		name: 'step1',
 		formName: 'vm.forms.step1',
-		title: 'A. WORK CLASS',
+		title: 'START',
 		header: 'A. PERMIT WORK CLASS',
 		buttonText: 'Continue',
 		fields: [{
@@ -45,7 +45,7 @@ var formSchema = {
 	}, {
 		name: 'step2',
 		formName: 'vm.forms.step2',
-		title: 'B. APPLICANT',
+		title: '',
 		header: 'B. APPLICANT CONTACT INFORMATION',
 		buttonText: 'Continue',
 		fields: [{
@@ -129,7 +129,7 @@ var formSchema = {
 	}, {
 		name: 'step3',
 		formName: 'vm.forms.step3',
-		title: 'C. SITE',
+		title: '',
 		header: 'C. SITE/PLANT INFORMATION',
 		buttonText: 'Continue',
 		fields: [{
@@ -226,7 +226,7 @@ var formSchema = {
 	}, {
 		name: 'step4',
 		formName: 'vm.forms.step4',
-		title: 'D. OWNER',
+		title: '',
 		header: 'D. OWNER INFORMATION (only if different than contact info provide fro the site/plant)',
 		buttonText: 'Continue',
 		fields: [{
@@ -323,7 +323,7 @@ var formSchema = {
 	}, {
 		name: 'step5',
 		formName: 'vm.forms.step5',
-		title: 'E. ADDITIONAL INFO',
+		title: '',
 		header: 'E. ADDITIONAL INFORMATION',
 		buttonText: 'Continue',
 		fields: [{
@@ -480,7 +480,7 @@ var formSchema = {
 	}, {
 		name: 'step6',
 		formName: 'vm.forms.step6',
-		title: 'F. DETAILS',
+		title: '',
 		header: 'F. DETAILS',
 		buttonText: 'Continue',
 		fields: [{
@@ -983,7 +983,7 @@ var formSchema = {
 	},{
 		name: 'step7',
 		formName: 'vm.forms.step7',
-		title: 'G. DECLARATION',
+		title: 'FINISH',
 		header: 'G. DECLARATION',
 		buttonText: 'Submit',
 		fields: [{
