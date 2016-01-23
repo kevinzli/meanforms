@@ -11,5 +11,10 @@ angular.module('mean.system')
       if($rootScope.state === '' ) {
         $rootScope.state = 'firstPage';
       }
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    });
+
+    $rootScope.$on('wizard:stepChanged', function (event, data) {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
     });
   }]);
