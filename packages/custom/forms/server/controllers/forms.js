@@ -47,13 +47,83 @@ function generateFormContent(form, formTemplate){
                     step.headerShowed=true;
                 }
 
-                content += (field.templateOptions.labelforEmail||field.templateOptions.label) +':&nbsp;'+ form.formModel[field.key] +'<br />';
+                content += generateFieldContent(field, form.formModel);
+                //(field.templateOptions.labelforEmail||field.templateOptions.label) +':&nbsp;'+ form.formModel[field.key] +'<br />';
             }
         })
     });
 
     return content;
 }
+
+function generateFieldContent(field, formModel){
+    var content ='';
+
+    if(field.type){
+        content += (field.templateOptions.labelforEmail||field.templateOptions.label) +':&nbsp;';
+        switch(field.type){
+            case "bcsa_checkbox":
+                content += (formModel[field.key]?'yes':'no') + '<br />';
+                break;
+            case "bcsa_multiCheckbox": //value is an array
+                var isFirstOne = true;
+                _.forEach(formModel[field.key], function(value, index){
+                    var option = _.find(field.templateOptions.options, function(o){ return o.id === value;});
+                    if(option){
+                        if(!isFirstOne){
+                            content +=',&nbsp;';
+                        }
+                        content += option.title;
+                        isFirstOne = false;
+                    }else{
+                        content += value +'<br />';
+                    }
+                });    
+                break;
+            case "bcsa_radio":
+                var option = _.find(field.templateOptions.options, function(o){ return o.value === formModel[field.key];});
+                if(option){
+                    content += option.name + '<br />';
+                }else{
+                    content += formModel[field.key] + '<br />';
+                }
+                break;
+            default:
+                content += formModel[field.key] +'<br />';
+                break;
+        }
+    }else {     //should be panel wrapper, it will have fieldGroup to hold actual fields
+        if( typeof field.fieldGroup != 'undefined' && field.fieldGroup instanceof Array ){
+            var groupModel = formModel;
+            var needBracket = false;
+
+            if(field.wrapper&&field.wrapper==="panel"){
+                groupModel = formModel[field.key];
+                //check if panel is empty object
+                if(!_.isEmpty(groupModel)){
+                    content += (field.templateOptions.labelforEmail||field.templateOptions.label)+ "&nbsp;[&nbsp;<br/>";
+                    needBracket = true;
+                }
+            }
+
+            if(!_.isEmpty(groupModel)){
+                _.forEach(field.fieldGroup, function(field,index){
+                    if(_.has(groupModel, field.key)||!field.key){
+                        content += generateFieldContent(field, groupModel);
+                    }
+                });
+            }
+
+            if(field.wrapper&&field.wrapper==="panel"){
+                if(needBracket){
+                    content += "&nbsp;] <br />";
+                }
+            }
+        }
+    }
+
+    return content;
+};
 
 module.exports = function(Forms) {
 

@@ -16,6 +16,7 @@ var formSchema = {
 			templateOptions: {
 				//label: 'please choose only one option',
 				label: '',
+				labelforEmail: 'Permit Work Class',
 				options: [{
 					value: "hotWaterBoiler",
 					name: "Hot Water Boiler"
@@ -527,7 +528,7 @@ var formSchema = {
 					key: 'details_1_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN # (mandatory)',
+						label: 'CRN #(mandatory)',
 						required: false
 					},
 		            expressionProperties: {
@@ -562,6 +563,7 @@ var formSchema = {
 					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
+						labelforEmail: 'Capacity Unit',
 						options: [{
 							value: "btusperhour",
 							name: "Btus/hr"
@@ -592,6 +594,7 @@ var formSchema = {
 					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
+						labelforEmail: 'Heating Surface Unit',
 						options: [{
 							value: "m2",
 							name: "m2"
@@ -651,7 +654,7 @@ var formSchema = {
 					key: 'details_2_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN # (mandatory)',
+						label: 'CRN #(mandatory)',
 						required: false
 					},
 		            expressionProperties: {
@@ -686,6 +689,7 @@ var formSchema = {
 					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
+						labelforEmail: 'Capacity Unit',
 						options: [{
 							value: "btusperhour",
 							name: "Btus/hr"
@@ -716,6 +720,7 @@ var formSchema = {
 					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
+						labelforEmail: 'Heating Surface Unit',
 						options: [{
 							value: "m2",
 							name: "m2"
@@ -775,7 +780,7 @@ var formSchema = {
 					key: 'details_3_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN # (mandatory)',
+						label: 'CRN #(mandatory)',
 						required: false
 					},
 		            expressionProperties: {
@@ -810,6 +815,7 @@ var formSchema = {
 					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
+						labelforEmail: 'Capacity Unit',
 						options: [{
 							value: "btusperhour",
 							name: "Btus/hr"
@@ -840,6 +846,7 @@ var formSchema = {
 					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
+						labelforEmail: 'Heating Surface Unit',
 						options: [{
 							value: "m2",
 							name: "m2"
@@ -899,7 +906,7 @@ var formSchema = {
 					key: 'details_4_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN # (mandatory)',
+						label: 'CRN #(mandatory)',
 						required: false
 					},
 		            expressionProperties: {
@@ -934,6 +941,7 @@ var formSchema = {
 					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
+						labelforEmail: 'Capacity Unit',
 						options: [{
 							value: "btusperhour",
 							name: "Btus/hr"
@@ -964,6 +972,7 @@ var formSchema = {
 					type: 'bcsa_radio',
 					templateOptions: {
 						label: '',
+						labelforEmail: 'Heating Surface Unit',
 						options: [{
 							value: "m2",
 							name: "m2"
