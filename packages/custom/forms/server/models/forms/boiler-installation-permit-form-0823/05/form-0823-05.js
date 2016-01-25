@@ -528,7 +528,7 @@ var formSchema = {
 					key: 'details_1_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN # (mandatory)',
+						label: 'CRN #(mandatory)',
 						required: false
 					},
 		            expressionProperties: {
@@ -654,7 +654,7 @@ var formSchema = {
 					key: 'details_2_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN # (mandatory)',
+						label: 'CRN #(mandatory)',
 						required: false
 					},
 		            expressionProperties: {
@@ -780,7 +780,7 @@ var formSchema = {
 					key: 'details_3_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN # (mandatory)',
+						label: 'CRN #(mandatory)',
 						required: false
 					},
 		            expressionProperties: {
@@ -906,7 +906,7 @@ var formSchema = {
 					key: 'details_4_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN # (mandatory)',
+						label: 'CRN #(mandatory)',
 						required: false
 					},
 		            expressionProperties: {

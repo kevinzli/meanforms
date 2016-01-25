@@ -445,7 +445,8 @@ section section .container {
 
 .steps-indicator {
   height: 90px !important;
-  padding: 50px 0 0 0; }
+  padding: 50px 0 0 0;
+  margin-left: -1px; }
   .steps-indicator li {
     line-height: 1em !important;
     margin-bottom: 1em !important;
