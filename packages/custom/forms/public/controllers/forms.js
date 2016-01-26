@@ -173,8 +173,8 @@ angular.module('mean.forms').config(function(formlyConfigProvider) {
             }
         },
         controller: /* @ngInject */ function($scope) {
-            const to = $scope.to;
-            const opts = $scope.options;
+            var to = $scope.to;
+            var opts = $scope.options;
             $scope.multiCheckbox = {
                 checked: [],
                 change: setModel
