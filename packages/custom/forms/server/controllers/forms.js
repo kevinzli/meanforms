@@ -29,7 +29,8 @@ function write_csr_email(req, form, formName, mailOptions, formTemplate) {
       generateFormContent(form, formTemplate),
       'Please click on the link below or paste this into your browser to review the form:',
       'http://' + req.headers.host + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id
-    ].join('<br />');
+    ].join('\r\n<br />');
+    //console.log(mailOptions.html);
     mailOptions.subject = 'Notification of form submission';
     return mailOptions;
   }
@@ -37,17 +38,18 @@ function write_csr_email(req, form, formName, mailOptions, formTemplate) {
 function generateFormContent(form, formTemplate){
     var content='';
     content += 'Submitted on ' + form.created +'<br />';
-    content += 'Submitted values are:<br />';
+    content += 'Submitted values are:<br />\r\n';
 
     _.forEach(formTemplate.fields, function(step, index){
+        var headerShowed = false;
         _.forEach(step.fields, function(field,index){
             if(_.has(form.formModel, field.key)){
-                if(!step.headerShowed&&step.header){
+                if(!headerShowed&&step.header){
                     content += '<br />---&nbsp;'+ step.header +'&nbsp;---' +'<br /><br />';
-                    step.headerShowed=true;
+                    headerShowed=true;
                 }
 
-                content += generateFieldContent(field, form.formModel);
+                content += generateFieldContent(field, form.formModel)+ '\r\n';
                 //(field.templateOptions.labelforEmail||field.templateOptions.label) +':&nbsp;'+ form.formModel[field.key] +'<br />';
             }
         })

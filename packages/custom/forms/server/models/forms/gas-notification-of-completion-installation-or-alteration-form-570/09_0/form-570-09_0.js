@@ -17,14 +17,12 @@ var formSchema={
                     templateOptions: {
                         label: 'Inspection type requested',
                         options: [
-                            {id: "commissioningApproval", title: "Commissioning approval*"},
-                            {id: "productApproval", title: "Product approval*"},
-                            {id: "roughIn", title: "Rough-in"},
-                            {id: "finalCompletion", title: "Final completion"},
-                            {id: "reinspectionNon-compliancesCorrected", title: "Re-inspection non-compliances corrected"},
+                            {value: "commissioningApproval", name: "Commissioning approval"},
+                            {value: "productApproval", name: "Product approval"},
+                            {value: "roughIn", name: "Rough-in"},
+                            {value: "finalCompletion", name: "Final completion"},
+                            {value: "reinspectionNon-compliancesCorrected", name: "Re-inspection non-compliances corrected"},
                         ],
-                        valueProp: 'id',
-                        labelProp: 'title',
                         required: true
                     },
                     expressionProperties: {
@@ -49,7 +47,7 @@ var formSchema={
                     key: 'commissioningApprovalNumber',
                     type: 'input',
                     templateOptions: {
-                        label: 'Commissioning Approval Number*',
+                        label: 'Commissioning Approval Number',
                         required: false
                     },
                     expressionProperties: {
@@ -60,7 +58,7 @@ var formSchema={
                     key: 'productApprovalNumber',
                     type: 'input',
                     templateOptions: {
-                        label: 'Product Approval Number*',
+                        label: 'Product Approval Number',
                         required: false
                     },
                     expressionProperties: {

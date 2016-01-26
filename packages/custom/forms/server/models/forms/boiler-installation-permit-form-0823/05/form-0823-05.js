@@ -36,8 +36,6 @@ var formSchema = {
 					value: "steamBoilerHp",
 					name: "Steam Boiler HP"
 				}],
-				// valueProp: 'id',
-				// labelProp: 'title',
 				required: true
 			},
             expressionProperties: {
@@ -81,8 +79,6 @@ var formSchema = {
 					value: "b",
 					name: "B"
 				}],
-				//valueProp: 'id',
-				//labelProp: 'title',
 				//required: true
 			},
             expressionProperties: {
@@ -120,8 +116,6 @@ var formSchema = {
 					value: "mail",
 					name: "Mail"
 				}],
-				//valueProp: 'id',
-				//labelProp: 'title',
 				//required: true
 			},
             expressionProperties: {
@@ -351,8 +345,6 @@ var formSchema = {
 					value: "yes",
 					name: "YES"
 				}],
-				//valueProp: 'id',
-				//labelProp: 'title',
 				//required: true
 			},
             expressionProperties: {
@@ -571,8 +563,6 @@ var formSchema = {
 							value: "lbperhour",
 							name: "Lb/hr"
 						}],
-						//valueProp: 'id',
-						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -602,8 +592,6 @@ var formSchema = {
 							value: "kw",
 							name: "KW"
 						}],
-						//valueProp: 'id',
-						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -697,8 +685,6 @@ var formSchema = {
 							value: "lbperhour",
 							name: "Lb/hr"
 						}],
-						//valueProp: 'id',
-						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -728,8 +714,6 @@ var formSchema = {
 							value: "kw",
 							name: "KW"
 						}],
-						//valueProp: 'id',
-						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -823,8 +807,6 @@ var formSchema = {
 							value: "lbperhour",
 							name: "Lb/hr"
 						}],
-						//valueProp: 'id',
-						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -854,8 +836,6 @@ var formSchema = {
 							value: "kw",
 							name: "KW"
 						}],
-						//valueProp: 'id',
-						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -949,8 +929,6 @@ var formSchema = {
 							value: "lbperhour",
 							name: "Lb/hr"
 						}],
-						//valueProp: 'id',
-						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
@@ -980,8 +958,6 @@ var formSchema = {
 							value: "kw",
 							name: "KW"
 						}],
-						//valueProp: 'id',
-						//labelProp: 'title',
 						//required: true
 					},
 		            expressionProperties: {
