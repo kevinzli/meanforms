@@ -977,7 +977,7 @@ var formSchema = {
 			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'I hereby declare all information provided is accurate; incorrect information may result in the retraction of the associated permit',
-				//required: true
+				required: true
 			},
             expressionProperties: {
                 "templateOptions.disabled": "formState.disabled"
@@ -987,7 +987,7 @@ var formSchema = {
 			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'The contractor agrees to pay on demand any shortages or extra charges for inspection of equipment not shown herein in accordance with the BC Safety Authority Boiler &amp; Pressure Vessel fee schedule (http://www.safetyauthority.ca/boiler-pressure-vessels-fee-schedule)',
-				//required: true
+				required: true
 			},
             expressionProperties: {
                 "templateOptions.disabled": "formState.disabled"
@@ -997,7 +997,7 @@ var formSchema = {
 			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'The contractor agrees to follow the Terms & Conditions associated with this installation permit.',
-				//required: true
+				required: true
 			},
             expressionProperties: {
                 "templateOptions.disabled": "formState.disabled"
@@ -1007,7 +1007,7 @@ var formSchema = {
 			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'The contractor agrees, after completion of work, to submit to BCSA form FRM-1149-00 (2013-04-15) "Boiler, Pressure Vessel and Refrigeration Inspection Declaration"',
-				//required: true
+				required: true
 			},
             expressionProperties: {
                 "templateOptions.disabled": "formState.disabled"
@@ -1017,7 +1017,7 @@ var formSchema = {
 			type: 'bcsa_checkbox',
 			templateOptions: {
 				label: 'Checking this box and submitting this form to BC Safety Authority via email constitutes your authorization. This has the same effect as submitting a handwritten signature.',
-				//required: true
+				required: true
 			},
             expressionProperties: {
                 "templateOptions.disabled": "formState.disabled"
