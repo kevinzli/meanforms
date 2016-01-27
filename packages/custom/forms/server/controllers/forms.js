@@ -43,7 +43,7 @@ function generateFormContent(form, formTemplate){
     _.forEach(formTemplate.fields, function(step, index){
         var headerShowed = false;
         _.forEach(step.fields, function(field,index){
-            if(_.has(form.formModel, field.key)){
+            if(_.has(form.formModel, field.key)&&!_.isEmpty(form.formModel[field.key])){
                 if(!headerShowed&&step.header){
                     content += '<br />---&nbsp;'+ step.header +'&nbsp;---' +'<br /><br />';
                     headerShowed=true;
