@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   clear: both;
   color: #0067b0;
-  margin: 20px 0 10px;
+  margin: 25px 0 10px;
   padding-left: 14px;
   font-size: 1.5em;
   font-weight: 400; }
@@ -1090,15 +1090,15 @@ h3 .small {
 
 .bcsa-address {
   color: #ffffff;
-  font-size: 11px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.5;
   margin-top: 8px; }
   @media (max-width: 767px) {
     .bcsa-address {
       color: #ffffff;
       font-size: 9px;
       line-height: 1.5;
-      margin-top: 12px; } }
+      margin-top: 6px; } }
 
 #footer {
   font-size: 0.8em;
@@ -1440,7 +1440,7 @@ h3 .small {
   border-image: none;
   border-style: none;
   border-width: 0;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 10px; }
 
 .alert-success {
@@ -2180,11 +2180,11 @@ form {
   margin-bottom: 0; }
 
 label {
-  text-transform: lowercase;
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  /*  font-variant: small-caps;
+    letter-spacing: 0.05em; */
   font-weight: 400;
-  font-size: 1.2em; }
+  font-size: 1em; }
   label span.required {
     color: #e84e40; }
 
@@ -2214,7 +2214,7 @@ label {
     position: relative;
     padding-left: 30px;
     padding-right: 10px;
-    padding-bottom: 5px; }
+    padding-bottom: 10px; }
 
 input[type="radio"] {
   line-height: normal;
@@ -2239,7 +2239,7 @@ input[type="radio"] {
   height: 20px;
   left: 0;
   margin-right: 10px;
-  margin-top: 3px;
+  margin-top: -1px;
   position: absolute;
   width: 20px; }
 
@@ -2254,7 +2254,7 @@ input[type="radio"] {
   font-size: 13px;
   height: 16px;
   left: 2px;
-  margin-top: 3px;
+  margin-top: -1px;
   position: absolute;
   text-align: center;
   top: 2px;
@@ -2308,6 +2308,11 @@ input[type="radio"] {
   color: #e84e40;
   background-color: #f2dede;
   border-color: #e84e40; }
+
+.control-label {
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-size: .9em; }
 
 .input-group > .form-control,
 .input-group > .input-group-addon,
