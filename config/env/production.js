@@ -69,7 +69,7 @@ module.exports = {
       enabled: false
     }
   },
-  emailFrom: 'kevin.li@safetyauthority.ca', // sender address like ABC <abc@example.com>
+  emailFrom: 'noreply@safetyauthority.ca', // sender address like ABC <abc@example.com>
   csrEmail: 'kevin.li@safetyauthority.ca',
   // mailer: {
   //   service: 'Hotmail', // Gmail, SMTP
