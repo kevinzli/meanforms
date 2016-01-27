@@ -52,7 +52,7 @@ var formSchema = {
 			key: 'contractorName',
 			type: 'input',
 			templateOptions: {
-				label: 'Contractor Name (as shown on the contractor license)',
+				label: 'Contractor Name (as shown on contractor licence)',
 				//required: true
 			},
             expressionProperties: {
@@ -62,7 +62,7 @@ var formSchema = {
 			key: 'contractorLicenseNumber',
 			type: 'input',
 			templateOptions: {
-				label: 'Contractor License #'
+				label: 'Contractor Licence Number'
 			},
             expressionProperties: {
                 "templateOptions.disabled": "formState.disabled"
@@ -98,7 +98,7 @@ var formSchema = {
 			key: 'contactNamePhone',
 			type: 'input',
 			templateOptions: {
-				label: 'Contact Name/Phone #',
+				label: 'Contact Name/Phone Number',
 				required: true
 			},
             expressionProperties: {
@@ -142,7 +142,7 @@ var formSchema = {
 			key: 'plantNumber',
 			type: 'input',
 			templateOptions: {
-				label: 'Plant number',
+				label: 'Plant Number',
 				//required: true
 			},
             expressionProperties: {
@@ -172,7 +172,7 @@ var formSchema = {
 			key: 'site_contactPhone',
 			type: 'input',
 			templateOptions: {
-				label: 'Contact Phone #',
+				label: 'Contact Phone Number',
 				//required: true
 			},
             expressionProperties: {
@@ -223,7 +223,7 @@ var formSchema = {
 		name: 'step4',
 		formName: 'vm.forms.step4',
 		title: '',
-		header: 'D. OWNER INFORMATION (only if different than contact info provide fro the site/plant)',
+		header: 'D. OWNER INFORMATION (Only if different from site/plant contact)',
 		buttonText: 'Continue',
 		fields: [{
 			key: 'companyOwnerName',
@@ -354,7 +354,7 @@ var formSchema = {
 			key: 'pipingDesignRegistration',
 			type: 'input',
 			templateOptions: {
-				label: 'Please provide Piping Design Registration',
+				label: 'Piping Design Registration',
 				//required: true
 			},
             expressionProperties: {
@@ -374,7 +374,7 @@ var formSchema = {
 			key: 'maxTemperature',
 			type: 'input',
 			templateOptions: {
-				label: 'Max. Temparature',
+				label: 'Maximum Temperature',
 				//required: true
 			},
             expressionProperties: {
@@ -384,7 +384,7 @@ var formSchema = {
 			key: 'maxPressure',
 			type: 'input',
 			templateOptions: {
-				label: 'Max. Pressure',
+				label: 'Maximum Pressure',
 				//required: true
 			},
             expressionProperties: {
@@ -394,7 +394,7 @@ var formSchema = {
 			key: 'maxDiameterandPipeSchedule',
 			type: 'input',
 			templateOptions: {
-				label: 'Max. Diameter & Pipe Schedule',
+				label: 'Maximum Diameter & Pipe Schedule',
 				//required: true
 			},
             expressionProperties: {
@@ -490,7 +490,7 @@ var formSchema = {
 					key: 'details_1_unitNumber',
 					type: 'input',
 					templateOptions: {
-						label: '# of Units'
+						label: 'Units'
 					},
 		            expressionProperties: {
 		                "templateOptions.disabled": "formState.disabled"
@@ -520,7 +520,7 @@ var formSchema = {
 					key: 'details_1_crn',
 					type: 'input',
 					templateOptions: {
-						label: 'CRN #(mandatory)',
+						label: 'CRN *',
 						required: false
 					},
 		            expressionProperties: {
@@ -534,7 +534,7 @@ var formSchema = {
 					key: 'details_1_serialNumber',
 					type: 'input',
 					templateOptions: {
-						label: 'Serial #'
+						label: 'Serial Number'
 					},
 		            expressionProperties: {
 		                "templateOptions.disabled": "formState.disabled"
@@ -986,7 +986,7 @@ var formSchema = {
 			key: 'declaration_2',
 			type: 'bcsa_checkbox',
 			templateOptions: {
-				label: 'The contractor agrees to pay on demand any shortages or extra charges for inspection of equipment not shown herein in accordance with the BC Safety Authority Boiler &#38; Pressure Vessel fee schedule (http://www.safetyauthority.ca/boiler-pressure-vessels-fee-schedule)',
+				label: 'The contractor agrees to pay on demand any shortages or extra charges for inspection of equipment not shown herein in accordance with the BC Safety Authority Boiler &amp; Pressure Vessel fee schedule (http://www.safetyauthority.ca/boiler-pressure-vessels-fee-schedule)',
 				//required: true
 			},
             expressionProperties: {
@@ -996,7 +996,7 @@ var formSchema = {
 			key: 'declaration_3',
 			type: 'bcsa_checkbox',
 			templateOptions: {
-				label: 'The contractor agrees to follow terms & conditions attached to this installation permit (refer to back page).',
+				label: 'The contractor agrees to follow the Terms & Conditions associated with this installation permit.',
 				//required: true
 			},
             expressionProperties: {
@@ -1043,7 +1043,7 @@ var formSchema = {
                 "templateOptions.disabled": "formState.disabled"
             }
 		},{
-			template: '<p><strong>FEE DECLARATION</strong>&nbsp;(See BCSA Website for CurrentFee Schedules at www.SafetyAuthority.ca)&nbsp;&nbsp;&nbsp;&nbsp;GST#:&nbsp;87931&nbsp;2802&nbsp;RT0001</p>',
+			template: '<p><strong>FEE DECLARATION</strong>&nbsp;(See BCSA Website for Current Fee Schedules at www.SafetyAuthority.ca)&nbsp;&nbsp;&nbsp;&nbsp;GST#:&nbsp;87931&nbsp;2802&nbsp;RT0001</p>',
 		},{
 			key: 'numberofunits',
 			type: 'input',

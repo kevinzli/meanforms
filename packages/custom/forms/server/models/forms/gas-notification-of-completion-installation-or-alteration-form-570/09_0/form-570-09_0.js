@@ -88,7 +88,8 @@ var formSchema={
                     key: 'siteAddress',
                     type: 'input',
                     templateOptions: {
-                        label: 'Site Address (suite/unit, streetnumber, street name, street type)',
+                        label: 'Site Address',
+                        // (suite/unit, street number, street name, street type)
                         required: true
                     },
                     expressionProperties: {
@@ -178,7 +179,7 @@ var formSchema={
             fields: [
                 {
                     key: 'signature',
-                    template: '<p>I, <input class="formly-field-input" ng-model="model[options.key]">, a gas fitter for the above listed licensed contractor or homeowner, hereby declare that the gas installation authorized under above-mentioned permit number has been installed to comply with the Safety Standards Act and Regulations of British Columbia. </p>',
+                    template: '<p>I, <input width="200" class="formly-field-input" ng-model="model[options.key]">, a Gas Fitter for the above listed licensed contractor or homeowner, hereby declare that the gas installation authorized under the above-mentioned permit number has been installed to comply with the Safety Standards Act and Regulations of British Columbia. </p>',
                     templateOptions: {
                         label: 'Gas fitter or homeowner name',
                         required: true,
@@ -190,7 +191,6 @@ var formSchema={
                 {
                     key: 'dateSigned',
                     type: 'input',
-                    // template: '<p> Placed in service (please provide date mm/dd/yyyy): <input class="formly-field-input" ng-model="model[options.key]"></p>',
                     templateOptions: {
                         label: 'Date placed in service (MMDDYYYY)',
                         required: true,
