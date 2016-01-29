@@ -93,6 +93,7 @@
                 <h2>{{step.header}}</h2>
                 <formly-form model="vm.model" fields="step.fields" form="step.form" options="vm.options">
                   <div>
+                    <button ng-hide="vm.options.formState.disabled" type="button" wz-previous class="btn btn-primary">Back</button>
                     <button ng-hide="vm.options.formState.disabled" type="submit" ng-disabled="step.form.$invalid" wz-next class="btn btn-primary submit-button">{{step.buttonText}}</button>
                     <button ng-show="vm.options.formState.disabled" type="button" wz-previous class="btn btn-primary">Previous</button>
                     <button ng-show="vm.options.formState.disabled" type="button" wz-next class="btn btn-primary">Next</button>
