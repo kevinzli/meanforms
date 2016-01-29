@@ -23,12 +23,14 @@ function sendMail(mailOptions) {
 }
 
 function write_csr_email(req, form, formName, mailOptions, formTemplate) {
+    var formReadOnlyViewURL= '//' + req.headers.host + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id;
+
     mailOptions.html = [
       'Hi,<br />',
       'A ' + formName +' has been submitted.<br />',
       generateFormContent(form, formTemplate),
       'Please click on the link below or paste this into your browser to review the form:',
-      '//' + req.headers.host + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id
+      '<a href="'+ formReadOnlyViewURL +'">' + formReadOnlyViewURL +'</a>'
     ].join('\r\n<br />');
     //console.log(mailOptions.html);
     mailOptions.subject = 'Notification of form submission';
