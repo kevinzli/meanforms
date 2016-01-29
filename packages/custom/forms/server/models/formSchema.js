@@ -36,32 +36,57 @@ function getForms(){
 	return forms;
 }
 
-function getFormSchema(id, version){
+function getFormPath(id, version){
     var path;
-    var form={};
 
     switch(id){
         case '501':
-            path = "./forms/gas-installation-permit-application-form-501/"+version+"/form-501-"+version+".js";
-            form = require(path);
+            path = "./forms/gas-installation-permit-application-form-501/"+version+"/";
             break;
         case '570':
-            path = "./forms/gas-notification-of-completion-installation-or-alteration-form-570/"+version+"/form-570-"+version+".js";
-            form = require(path);
+            path = "./forms/gas-notification-of-completion-installation-or-alteration-form-570/"+version+"/";
             break;
         case '0823':
-            path = "./forms/boiler-installation-permit-form-0823/"+version+"/form-0823-"+version+".js";
-            form = require(path);
+            path = "./forms/boiler-installation-permit-form-0823/"+version+"/";
             break;
         case '206':
-            path = "./forms/electrical-contractor-authorization-and-declaration-form-206/"+version+"/form-206-"+version+".js";
-            form = require(path);
+            path = "./forms/electrical-contractor-authorization-and-declaration-form-206/"+version+"/";
             break;
         case '1004':
-            path = "./forms/application-for-power-engineer-operator-and-safety-awareness-examinations-form-1004/"+version+"/form-1004-"+version+".js";
-            form = require(path);
+            path = "./forms/application-for-power-engineer-operator-and-safety-awareness-examinations-form-1004/"+version+"/";
             break;
     }
+    
+    return path;
+}
+
+function getFormSchema(id, version){
+    var form={};
+
+    var path= getFormPath(id,version) + "form-" +id +"-"+version +".js";
+    form = require(path);
+    // switch(id){
+    //     case '501':
+    //         path = "./forms/gas-installation-permit-application-form-501/"+version+"/form-501-"+version+".js";
+    //         form = require(path);
+    //         break;
+    //     case '570':
+    //         path = "./forms/gas-notification-of-completion-installation-or-alteration-form-570/"+version+"/form-570-"+version+".js";
+    //         form = require(path);
+    //         break;
+    //     case '0823':
+    //         path = "./forms/boiler-installation-permit-form-0823/"+version+"/form-0823-"+version+".js";
+    //         form = require(path);
+    //         break;
+    //     case '206':
+    //         path = "./forms/electrical-contractor-authorization-and-declaration-form-206/"+version+"/form-206-"+version+".js";
+    //         form = require(path);
+    //         break;
+    //     case '1004':
+    //         path = "./forms/application-for-power-engineer-operator-and-safety-awareness-examinations-form-1004/"+version+"/form-1004-"+version+".js";
+    //         form = require(path);
+    //         break;
+    // }
 	
     var formDef = _.find(forms, {
                     'id': id
@@ -75,5 +100,12 @@ function getFormSchema(id, version){
     return form.formSchema;
 }
 
+
+function getFormDescriptionPath(id, version){
+    var path= getFormPath(id,version) + "form-" +id +"-"+version +"-description" +".html";
+    return path;
+}
+
 module.exports.getFormSchema = getFormSchema;
 module.exports.getForms = getForms;
+module.exports.getFormDescriptionPath = getFormDescriptionPath;

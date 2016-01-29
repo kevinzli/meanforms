@@ -193,6 +193,12 @@ module.exports = function(Forms) {
             return formSchemas.getFormSchema(id, version);
         },
         /**
+         * Get a form description by id, version
+         */
+        getFormDescriptionPath:function(id, version){
+            return formSchemas.getFormDescriptionPath(id, version);
+        },
+        /**
          * Get a form by objectId
          */
         getForm:function(req, res){

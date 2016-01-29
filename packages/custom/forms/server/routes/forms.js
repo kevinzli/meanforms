@@ -5,6 +5,7 @@
 module.exports = function(Forms, app, auth, database) {
 
   var forms = require('../controllers/forms')(Forms);
+  var path = require('path');
 
   /**
    * Get all form schemas
@@ -21,6 +22,13 @@ module.exports = function(Forms, app, auth, database) {
    */
   app.get('/api/formschemas/:formId/:version', function(req, res, next){
     res.json(forms.getFormSchema(req.params.formId, req.params.version));
+  });
+
+  /**
+   * Get a form description by id and version
+   */
+  app.get('/api/formdescriptions/:formId/:version', function(req, res, next){
+    res.sendFile(path.resolve('packages/custom/forms/server/models/' + forms.getFormDescriptionPath(req.params.formId, req.params.version)));
   });
 
   /**

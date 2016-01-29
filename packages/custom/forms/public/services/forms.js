@@ -9,6 +9,10 @@ function formsService($http) {
    	    return $http.get('/api/formschemas/'+id+'/'+version);
    	}
 
+    function getFormDescription(id, version){
+        return $http.get('/api/formdescriptions/'+id+'/'+version);
+    }
+
     function getForm(objectId){
         return $http.get('/api/forms/'+objectId);
     }
@@ -31,7 +35,8 @@ function formsService($http) {
       getFormSchema: getFormSchema,
       createForm: createForm,
       getForm: getForm,
-      getFullForm: getFullForm
+      getFullForm: getFullForm,
+      getFormDescription: getFormDescription
     };
   }
 

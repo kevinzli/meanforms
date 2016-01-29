@@ -7,7 +7,7 @@ angular.module('mean.forms').controller('FormController', ['$scope', 'Global', '
         $scope.package = {
             name: 'forms'
         };
-
+        $scope.closeAlert(0);
         $scope.dataLoaded = false;
 
         $scope.formObjectId = $stateParams.formObjectId;
