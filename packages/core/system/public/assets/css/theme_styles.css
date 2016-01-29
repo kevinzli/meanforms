@@ -655,6 +655,20 @@ h3 .small {
   z-index: 9005;
   text-transform: capitalize; }
 
+@media screen {
+  #printSection {
+    display: none; } }
+@media print {
+  body * {
+    visibility: hidden; }
+
+  #printSection, #printSection * {
+    visibility: visible; }
+
+  #printSection {
+    position: absolute;
+    left: 0;
+    top: 0; } }
 .navbar-toggle {
   border: medium none;
   font-size: 1.4em;
