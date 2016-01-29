@@ -40,9 +40,9 @@ angular.module('mean.forms').controller('FormController', ['$scope', 'Global', '
                 generateFormContent(form, formName, formSchema),
                 'Please save the link below if you need to visit this page later:',
                 //$location.protocol() + '://' +$location.host() + ':' + $location.port() + '/forms/' + form._id +'/confirmation',
-                $location.absUrl(),
+                '<span style="word-break: break-all">$location.absUrl()</span>',
                 '<br />'
-            ].join('\r\n<br />');
+            ].join('<br />');
 
             return confirmationPageHtml;
         }
@@ -51,7 +51,7 @@ angular.module('mean.forms').controller('FormController', ['$scope', 'Global', '
             var content = '';
             content += 'Form Name: ' + formName +'<br />';
             content += 'Submitted on: ' + form.created + '<br />';
-            content += 'Submitted values are:<br />\r\n';
+            content += 'Submitted values are:<br />';
 
             _.forEach(formSchema.fields, function(step, index) {
                 var headerShowed = false;
@@ -62,7 +62,7 @@ angular.module('mean.forms').controller('FormController', ['$scope', 'Global', '
                             headerShowed = true;
                         }
 
-                        content += generateFieldContent(field, form.formModel) + '\r\n';
+                        content += generateFieldContent(field, form.formModel);
                     }
                 })
             });
