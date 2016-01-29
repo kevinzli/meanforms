@@ -88,6 +88,7 @@ var formSchema = {
 			key: 'emailAddress',
 			type: 'input',
 			templateOptions: {
+				type: "email", 
 				label: 'Email address',
 				required: true
 			},
@@ -162,6 +163,7 @@ var formSchema = {
 			key: 'site_contactEmail',
 			type: 'input',
 			templateOptions: {
+				type: "email", 
 				label: 'Contact Email',
 				//required: true
 			},
@@ -309,6 +311,7 @@ var formSchema = {
 			key: 'owner_emil',
 			type: 'input',
 			templateOptions: {
+				type: "email", 
 				label: 'Contact Email',
 				//required: true
 			},
