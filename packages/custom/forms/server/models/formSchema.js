@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('lodash');
+
 var forms= [
     // {
     // 	id:"501",
@@ -61,6 +63,15 @@ function getFormSchema(id, version){
             break;
     }
 	
+    var formDef = _.find(forms, {
+                    'id': id
+                });
+
+    if (formDef) {
+        form.formSchema.Name = formDef.name;
+        form.formSchema.Label = formDef.label;
+    }
+
     return form.formSchema;
 }
 

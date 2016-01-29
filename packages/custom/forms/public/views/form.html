@@ -86,7 +86,7 @@
         <div class="alert alert-info"><p>
            <strong>Note:</strong> Any personal information collected is handled in accordance with the British Columbia Freedom of Information and Protection of Privacy Act. If you have questions about the collection, use, or disclosure of this information, contact the Records, Information and Privacy Analyst for the BC Safety Authority at 1-866-566-7233.
         </p></div>
-        <h1>{{vm.formName}} {{vm.formId}}</h1>
+        <h1>{{vm.formName}} </h1>
         <form name="vm.form">
             <wizard on-finish="vm.finishWizard()" > 
               <wz-step ng-repeat="step in vm.fields" title="{{step.title}}">

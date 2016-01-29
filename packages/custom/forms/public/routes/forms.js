@@ -10,6 +10,11 @@ angular.module('mean.forms').config(['$stateProvider',
         url: '/forms/:formId/:version/:formObjectId?',
         templateUrl: 'forms/views/form.html',
         controller: 'FormsController as vm'
-      });
+    })
+    .state('form confirmation',{
+        url: '/forms/:formObjectId/confirmation',
+        templateUrl: 'forms/views/form_confirmation.html',
+        controller: 'FormController'
+    });
   }
 ]);

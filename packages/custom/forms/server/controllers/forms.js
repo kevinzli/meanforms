@@ -28,7 +28,7 @@ function write_csr_email(req, form, formName, mailOptions, formTemplate) {
       'A ' + formName +' has been submitted.<br />',
       generateFormContent(form, formTemplate),
       'Please click on the link below or paste this into your browser to review the form:',
-      'http://' + req.headers.host + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id
+      '//' + req.headers.host + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id
     ].join('\r\n<br />');
     //console.log(mailOptions.html);
     mailOptions.subject = 'Notification of form submission';
@@ -43,7 +43,7 @@ function generateFormContent(form, formTemplate){
     _.forEach(formTemplate.fields, function(step, index){
         var headerShowed = false;
         _.forEach(step.fields, function(field,index){
-            if(_.has(form.formModel, field.key)&&!_.isEmpty(form.formModel[field.key])){
+            if((field.type&&field.type==='bcsa_checkbox')||(_.has(form.formModel, field.key)&&!_.isEmpty(form.formModel[field.key]))){
                 if(!headerShowed&&step.header){
                     content += '<br />---&nbsp;'+ step.header +'&nbsp;---' +'<br /><br />';
                     headerShowed=true;
@@ -121,6 +121,9 @@ function generateFieldContent(field, formModel){
                     content += "&nbsp;] <br />";
                 }
             }
+        }else{
+            content += (field.templateOptions.labelforEmail || field.templateOptions.label) + ':&nbsp;';
+            content += formModel[field.key] + '<br />';
         }
     }
 
@@ -208,6 +211,30 @@ module.exports = function(Forms) {
 
                 res.json(form);
             });
-        } 
+        },
+        /**
+         * Get a form by objectId with schema
+         */
+        getFullForm:function(req, res){
+            var objectId=req.params.objectId;
+            var query = Form.findById(objectId);
+
+            query.exec(function (err, form){
+                if (err) { 
+                    return res.status(500).json({
+                        error: 'Error happens when finding the form'
+                    }); 
+                }
+                if (!form) { 
+                    return res.status(500).json({
+                        error: 'Cannot find the form'
+                    }); 
+                }
+
+                var formSchema = formSchemas.getFormSchema(form.formId, form.formVersion);
+
+                res.json({'form': form, 'formSchema': formSchema});
+            });
+        }
     };
 }

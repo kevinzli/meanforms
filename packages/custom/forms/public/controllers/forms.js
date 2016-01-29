@@ -10,28 +10,35 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
 
         var vm = this;
 
-        Forms.getForms().then(function(response) {
-            $scope.forms = response.data;
+        //parameters
+        vm.formId = $stateParams.formId;
+        vm.formVersion = $stateParams.version;
 
-            //parameters
-            vm.formId = $stateParams.formId;
-            vm.formVersion = $stateParams.version;
+        if (vm.formId && vm.formVersion) {
+            vm.formObjectId = $stateParams.formObjectId;
 
-            if (vm.formId && vm.formVersion) {
-                vm.formObjectId = $stateParams.formObjectId;
+            vm.isCreateNew = vm.formObjectId ? false : true;
+            vm.viewmode = vm.formObjectId ? true : false;
 
-                vm.isCreateNew = vm.formObjectId ? false : true;
-                vm.viewmode = vm.formObjectId ? true : false;
+            //get an existing form with form schema
+            if (vm.formObjectId) {
+                Forms.getFullForm(vm.formObjectId).then(function(response){
+                    var dynamicForm = response.data.formSchema;
 
-
-                var form = _.find($scope.forms, {
-                    'id': vm.formId
+                    // An array of our form fields with configuration
+                    // and options set. We make reference to this in
+                    // the 'fields' attribute on the  element
+                    vm.fields = dynamicForm.fields;
+                    vm.originalFields = angular.copy(vm.fields);
+                    vm.model = response.data.form.formModel;
+                    vm.viewmode = true;
+                    vm.options.formState.disabled = vm.viewmode;
+                    vm.formName = dynamicForm.Name;
+                    vm.formLabel = dynamicForm.Label;
+                }, function(response){
+                    console.log("error to get the form " + vm.formObjectId);
                 });
-
-                if (form) {
-                    vm.formName = form.name;
-                }
-
+            } else {
                 //get the dynamic form from javascript objects
                 Forms.getFormSchema(vm.formId, vm.formVersion).then(function(response) {
                     var dynamicForm = response.data;
@@ -42,28 +49,16 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
                     vm.fields = dynamicForm.fields;
                     vm.originalFields = angular.copy(vm.fields);
 
-                    //get the form model for existing form
-                    if (vm.formObjectId) {
-                        Forms.getForm(vm.formObjectId).then(function(response) {
-                            vm.model = response.data.formModel;
-                            vm.viewmode = true;
-                            vm.options.formState.disabled = vm.viewmode;
-                        }, function(response) {
-                            console.log("error to get the form model" + vm.formObjectId);
-                        });
-                    } else {
-                        // The model object that we reference
-                        // on the  element in index.html
-                        vm.model = dynamicForm.model;
-                    }
-                    vm.formLabel = form.label;
+                    // The model object that we reference
+                    // on the  element in index.html
+                    vm.model = dynamicForm.model;
+                    vm.formName = dynamicForm.Name;
+                    vm.formLabel = dynamicForm.Label;
                 }, function(response) {
                     console.log("error to get the form schema" + vm.formId);
                 });
             }
-        }, function(response) {
-            console.log("error to get all schemas");
-        });
+        }
 
         vm.finishWizard = finishWizard;
 
@@ -84,7 +79,9 @@ angular.module('mean.forms').controller('FormsController', ['$scope', 'Global', 
 
             Forms.createForm(vm.formId, vm.formVersion, vm.model).then(function(response) {
                 console.log("From client: the form created successfully");
-                $scope.openModal("The form has been created successfully.");
+                //$scope.openModal("The form has been created successfully.");
+                var formObjectId= response.data._id;
+                $state.go('form confirmation', { formObjectId: formObjectId });
             }, function(response) {
                 console.log("From client: error happens when creating form");
             });
