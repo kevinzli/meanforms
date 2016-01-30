@@ -68,9 +68,7 @@
            id="{{id}}"
            class="formly-field-checkbox"
              ng-model="model[options.key]">
-        <label for="{{id}}">
-          {{to.label}}
-          {{to.required ? '*' : ''}}
+        <label for="{{id}}" ng-bind-html="to.label + (to.required ? '*' : '')">
         </label>
       </div>
     </script>

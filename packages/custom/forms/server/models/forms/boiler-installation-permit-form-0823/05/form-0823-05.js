@@ -999,7 +999,8 @@ var formSchema = {
 			key: 'declaration_3',
 			type: 'bcsa_checkbox',
 			templateOptions: {
-				label: 'The contractor agrees to follow the Terms & Conditions associated with this installation permit.',
+				label: 'The contractor agrees to follow the <a href="formsdescription/0823/05" target="_blank">Terms & Conditions</a> associated with this installation permit.',
+				labelforEmail: 'The contractor agrees to follow the Terms & Conditions associated with this installation permit.',
 				required: true
 			},
             expressionProperties: {
