@@ -36,11 +36,11 @@ angular.module('mean.forms').controller('FormController', ['$scope', 'Global', '
 
         function getConfirmationPageHtml(form, formName, formSchema) {
             var confirmationPageHtml = [
-                '<h2>Your form' + ' has been submitted successfully.</h2>',
-                generateFormContent(form, formName, formSchema),
-                'Please save the link below if you need to visit this page later:',
+                '<h2 style="margin-top: 0; margin-bottom: 0;">Your form' + ' has been submitted successfully.</h2>',
+                '<div class="alert alert-info"><i class="fa fa-info"></i> To visit this page later, please save this link:',
                 //$location.protocol() + '://' +$location.host() + ':' + $location.port() + '/forms/' + form._id +'/confirmation',
-                '<span style="word-break: break-all">' + $location.absUrl() +'</span>',
+                '<span style="word-break: break-all; font-weight: 600;">' + $location.absUrl() +'</span></div>',
+                generateFormContent(form, formName, formSchema),
                 '<br />'
             ].join('<br />');
 
@@ -49,20 +49,20 @@ angular.module('mean.forms').controller('FormController', ['$scope', 'Global', '
 
         function generateFormContent(form, formName, formSchema) {
             var content = '';
-            content += 'Form Name: ' + formName +'<br />';
-            content += 'Submitted on: ' + form.created + '<br />';
-            content += 'Submitted values are:<br />';
+            content += '<h3 style="margin-top: 0;">' + formName +'</h3>';
+            content += 'Submitted: ' + form.created + '<br />';
+            content += 'Submitted values:<br />';
 
             _.forEach(formSchema.fields, function(step, index) {
                 var headerShowed = false;
                 _.forEach(step.fields, function(field, index) {
                     if((field.type&&field.type==='bcsa_checkbox')||(_.has(form.formModel, field.key)&&!_.isEmpty(form.formModel[field.key]))){
                         if (!headerShowed && step.header) {
-                            content += '<br />---&nbsp;' + step.header + '&nbsp;---' + '<br /><br />';
+                            content += '<br />' + step.header + '<br /><br />';
                             headerShowed = true;
                         }
 
-                        content += generateFieldContent(field, form.formModel);
+                        content += '<p>' + generateFieldContent(field, form.formModel) + '</p>';
                     }
                 })
             });
@@ -77,7 +77,7 @@ angular.module('mean.forms').controller('FormController', ['$scope', 'Global', '
                 content += (field.templateOptions.labelforEmail || field.templateOptions.label) + ':&nbsp;';
                 switch (field.type) {
                     case "bcsa_checkbox":
-                        content += (formModel[field.key] ? 'yes' : 'no') + '<br />';
+                        content += (formModel[field.key] ? '<span style="color:green">yes</span>' : '<span style="color:red">no</span>') + '<br />';
                         break;
                     case "bcsa_multiCheckbox": //value is an array
                         var isFirstOne = true;
