@@ -23,7 +23,8 @@ function sendMail(mailOptions) {
 }
 
 function write_csr_email(req, form, formName, mailOptions, formTemplate) {
-    var formReadOnlyViewURL= '//' + req.headers.host + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id;
+    //var formReadOnlyViewURL= '//' + req.headers.host + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id;
+    var formReadOnlyViewURL = (config.hostname || req.headers.host) + '/forms/'+ form.formId +'/' + form.formVersion+'/' + form._id;
 
     mailOptions.html = [
       'Hi,<br />',
