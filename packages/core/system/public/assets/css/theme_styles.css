@@ -445,12 +445,12 @@ section section .container {
 
 .steps-indicator {
   height: 90px !important;
-  padding: 50px 0 0 0;
-  margin-left: -1px; }
+  padding: 50px 0 0 0; }
   .steps-indicator li {
     line-height: 1em !important;
     margin-bottom: 1em !important;
-    letter-spacing: 0.075em; }
+    letter-spacing: 0.075em;
+    margin-left: -1px; }
 
 .menu .leaf a {
   overflow: hidden;
